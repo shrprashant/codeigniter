@@ -22,6 +22,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function petmart(){
         	$this->load->view('petmart');
         }
+
+        public function login(){
+            $this->load->view('login');
+        }
+
+         public function signup(){
+            $this->load->view('signup');
+        }
  
     }
 ?>
