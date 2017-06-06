@@ -73,7 +73,7 @@
 						
 					
 						<div class="form-group ">
-							<a href="" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</a>
+							<button href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>
 							<a href="<?php echo site_url('User/signup')?>"> Register here</a>
 						</div>
 						
@@ -94,12 +94,12 @@
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
 
 <!-- Button -->
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   </div>
-</div>
+</div> -->
 
 </fieldset>
 </form>

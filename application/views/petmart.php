@@ -66,22 +66,22 @@
 <div id="footer">
   <div class="section">
     <ul>
-      <li> <img src="images/friendly-pets.jpg" width="240" height="186" alt="">
+      <li> <img src="<?php echo base_url();?>assets/images/friendly-pets.jpg" width="240" height="186" alt="">
         <h2><a href="#">Friendly Pets</a></h2>
         <p> Pets are our best friend. they gives us company. they never betray us.<a class="more" href="#">Read More</a> </p>
       </li>
-      <li> <img src="images/pet-lover2.jpg" width="240" height="186" alt="">
+      <li> <img src="<?php echo base_url();?>assets/images/pet-lover2.jpg" width="240" height="186" alt="">
         <h2><a href="#">How dangerous are they</a></h2>
         <p> They are not dangerous if we love and care them. sometime they may be aggressive. <a class="more" href="#"></a> </p>
       </li>
-      <li> <img src="images/healthy-dog.jpg" width="240" height="186" alt="">
+      <li> <img src="<?php echo base_url();?>assets/images/healthy-dog.jpg" width="240" height="186" alt="">
         <h2><a href="#">Keep them healthy</a></h2>
         <p> Good food with regular diet plan makes them healthy. <a class="more" href="#">Read More</a> </p>
       </li>
       <li>
         <h2><a href="#">Love...love...love...pets</a></h2>
         <p> As we love them they are always loyal to us. So we should care them <a class="more" href="#">Read More</a> </p>
-        <img src="images/pet-lover.jpg" width="240" height="186" alt=""> </li>
+        <img src="<?php echo base_url();?>assets/images/pet-lover.jpg" width="240" height="186" alt=""> </li>
     </ul>
   </div>
   <div id="footnote">

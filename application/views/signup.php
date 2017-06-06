@@ -4,13 +4,13 @@
 <title>Registration</title>
 <meta charset="iso-8859-1">
 <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" type="text/css">
-<!--[if IE 6]><link href="css/ie6.css" rel="stylesheet" type="text/css"><![endif]-->
-<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+<link href="css/ie6.css" rel="stylesheet" type="text/css">
+<link href="css/ie7.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
   <ul class="navigation">
- <li class="active"><a href="<?php echo site_url('User/index')?>">Home</a></li>
+    <li ><a href="<?php echo site_url('User/index')?>">Home</a></li>
     <li><a href="<?php echo site_url('User/petmart')?>">PetMart</a></li>
     <li><a href="<?php echo site_url('User/about')?>">About us</a></li>
     <li><a href="<?php echo site_url('User/blog')?>">Blog</a></li>
@@ -36,26 +36,26 @@
     <!-- Google Fonts -->
     <link href='<?php echo base_url();?>assets/css/googlefonts.css' rel='stylesheet' type='text/css'>
     <link href='<?php echo base_url();?>assets/css/googefonts.css' rel='stylesheet' type='text/css'>
-        <link href='<?php echo base_url();?>assets/css/reg.css' rel='stylesheet' type='text/css'>
-   
+    <link href='<?php echo base_url();?>assets/css/reg.css' rel='stylesheet' type='text/css'>
+   	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
     
-<div&emsp;&emsp;&emsp;>
+<div class="regform"&emsp;&emsp;&emsp;>
 	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-   
   <div class="container">
-			<div class="row main">
+			<div class="r">
 				<div class="main-login main-center">
 				<h1>Registration.</h1>
-					<form class="" method="post" action="#">
+					<form class="form-control" method="post" action="<?php echo base_url();?>User/register">
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">First Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your First Name"/>
+									<input type="text" class="form-control" name="first_name" id="name"  placeholder="Enter your First Name"/>
 								</div>
 							</div>
 						</div>
@@ -64,7 +64,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your First Name"/>
+									<input type="text" class="form-control" name="last_name" id="name"  placeholder="Enter your Last Name"/>
 								</div>
 							</div>
 						</div>
@@ -97,7 +97,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="repassword" id="confirm"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
@@ -106,7 +106,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="number" class="form-control" name="phone" id="phone"  placeholder="Enter your phone number"/>
+									<input type="text" class="form-control" name="phone_number" id="phone"  placeholder="Enter your phone number"/>
 								</div>
 							</div>
 						</div>
@@ -127,13 +127,15 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<div><input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/> </div>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group ">
-							<a href="" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+							<button type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register
+							</button>
+						
 						</div>
 						
 					</form>
@@ -146,19 +148,19 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
-  <script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
+
 
 
 <!-- Success message -->
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
 
 <!-- Button -->
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
   </div>
-</div>
+</div> -->
 
 </fieldset>
 </form>
