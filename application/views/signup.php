@@ -127,13 +127,13 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<div><input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/> </div>
+									<div><input type="email" class="form-control" name="email_id" id="email"  placeholder="Enter your Email"/> </div>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group ">
-							<button type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register
+							<button type="submit"  name ='signup'id="button" class="btn btn-primary btn-lg btn-block login-button">Register
 							</button>
 						
 						</div>
