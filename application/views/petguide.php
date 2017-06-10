@@ -10,13 +10,13 @@
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
   <ul class="navigation">
-    <li class="active"><a href="<?php echo site_url('User/index')?>">Home</a></li>
-    <li><a href="<?php echo site_url('User/petmart')?>">PetMart</a></li>
-    <li><a href="<?php echo site_url('User/about')?>">About us</a></li>
-    <li><a href="<?php echo site_url('User/blog')?>">Blog</a></li>
-    <li><a href="<?php echo site_url('User/petguide')?>">PetGuide</a></li>
-    <li><a href="<?php echo site_url('User/contact')?>">Contact us</a></li>
-    <li><a href="<?php echo site_url('User/login')?>">Login</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/index')?>">Home</a></li>
+    <li><a href="<?php echo site_url('Home/petmart')?>">PetMart</a></li>
+    <li><a href="<?php echo site_url('Home/about')?>">About us</a></li>
+    <li><a href="<?php echo site_url('Home/blog')?>">Blog</a></li>
+    <li><a href="<?php echo site_url('Home/petguide')?>">PetGuide</a></li>
+    <li><a href="<?php echo site_url('Home/contact')?>">Contact us</a></li>
+    <li><a href="<?php echo site_url('Home/login')?>">Login</a></li>
   </ul>
 </div>
 <div id="body">

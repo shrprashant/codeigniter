@@ -10,13 +10,13 @@
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
   <ul class="navigation">
- <li class="active"><a href="<?php echo site_url('User/index')?>">Home</a></li>
-    <li><a href="<?php echo site_url('User/petmart')?>">PetMart</a></li>
-    <li><a href="<?php echo site_url('User/about')?>">About us</a></li>
-    <li><a href="<?php echo site_url('User/blog')?>">Blog</a></li>
-    <li><a href="<?php echo site_url('User/petguide')?>">PetGuide</a></li>
-    <li><a href="<?php echo site_url('User/contact')?>">Contact us</a></li>
-    <li><a href="<?php echo site_url('User/login')?>">Login</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/index')?>">Home</a></li>
+    <li><a href="<?php echo site_url('Home/petmart')?>">PetMart</a></li>
+    <li><a href="<?php echo site_url('Home/about')?>">About us</a></li>
+    <li><a href="<?php echo site_url('Home/blog')?>">Blog</a></li>
+    <li><a href="<?php echo site_url('Home/petguide')?>">PetGuide</a></li>
+    <li><a href="<?php echo site_url('Home/contact')?>">Contact us</a></li>
+    <li><a href="<?php echo site_url('Home/login')?>">Login</a></li>
   </ul>
 </div>
 
@@ -24,6 +24,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css">
+
+</script>
+
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jconfirmaction.jquery.js"></script>
+<script type="text/javascript">
+  
+  $(document).ready(function() {
+    $('.ask').jConfirmAction();
+  });
+  
+</script>
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/reg.js"></script>
     <!-- Website CSS style -->
@@ -47,7 +58,7 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				<h1>Login</h1>
-					<form class="" method="post" action="#">
+					<form class="form-control" method="post" action="<?php echo base_url();?>User/login">
 					
 
 						<div class="form-group">
@@ -70,11 +81,19 @@
 							</div>
 						</div>
 
-						
+						<div> <dl>
+                        <dt><label></label></dt>
+                        <dd>
+                    <input type="checkbox" name="interests[]" id="" value="" /><label class="check_label">Remember me</label>
+                        </dd>
+                    </dl>
+                    
+              
+             </div>
 					
 						<div class="form-group ">
-							<button href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>
-							<a href="<?php echo site_url('User/signup')?>"> Register here</a>
+							<button href="#" type="submit" name="login" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>
+							<a href="<?php echo site_url('Home/signup')?>"> Register here</a>
 						</div>
 						
 					</form>

@@ -27,15 +27,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('login');
         }
 
-       
-         public function signup(){
+        public function signup(){
             $this->load->view('signup');
-        }
-      
+        }    
 
     	public function dashboard(){
     		$this->load->view('dashboard');
     	}
+
+        public function admin(){
+            $this->load->view('indexAdmin');
+        }
 
    }
 

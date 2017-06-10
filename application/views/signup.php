@@ -9,14 +9,14 @@
 </head>
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
-  <ul class="navigation">
-    <li ><a href="<?php echo site_url('User/index')?>">Home</a></li>
-    <li><a href="<?php echo site_url('User/petmart')?>">PetMart</a></li>
-    <li><a href="<?php echo site_url('User/about')?>">About us</a></li>
-    <li><a href="<?php echo site_url('User/blog')?>">Blog</a></li>
-    <li><a href="<?php echo site_url('User/petguide')?>">PetGuide</a></li>
-    <li><a href="<?php echo site_url('User/contact')?>">Contact us</a></li>
-    <li><a href="<?php echo site_url('User/login')?>">Login</a></li>
+ <ul class="navigation">
+ <li class="active"><a href="<?php echo site_url('Home/index')?>">Home</a></li>
+    <li><a href="<?php echo site_url('Home/petmart')?>">PetMart</a></li>
+    <li><a href="<?php echo site_url('Home/about')?>">About us</a></li>
+    <li><a href="<?php echo site_url('Home/blog')?>">Blog</a></li>
+    <li><a href="<?php echo site_url('Home/petguide')?>">PetGuide</a></li>
+    <li><a href="<?php echo site_url('Home/contact')?>">Contact us</a></li>
+    <li><a href="<?php echo site_url('Home/login')?>">Login</a></li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -48,13 +48,13 @@
 			<div class="r">
 				<div class="main-login main-center">
 				<h1>Registration.</h1>
-					<form class="form-control" method="post" action="<?php echo base_url();?>User/register">
+					<form >
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">First Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+							class="form-control" method="post" action="<?php echo base_url();?>User/register"		<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="first_name" id="name"  placeholder="Enter your First Name"/>
 								</div>
 							</div>
