@@ -50,11 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
     
         public function login(){ 
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[7]|max_length[50]');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]|max_length[50]');
         
-        if($this->form_validation->run()){
             $username=$this->input->post('username');
             $password=$this->input->post('password');
             
@@ -64,6 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if($userID){
                 if($userID==1){
                     $this->load->view('indexAdmin');
+                    
                 }else{
                     $this->load->library('session');
                     $this->session->set_userdata('user_id',$userID);
@@ -72,17 +69,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             } else {
                 echo ("Password not match");
             }
-        } else {
-            $this->load->view('Login');
+    
         }
-    }
 
 
     }
-
-
-
-
-
 
 ?>

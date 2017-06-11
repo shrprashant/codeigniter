@@ -21,29 +21,17 @@ public function getRegister($firstname,$lastname,$username,$password,
 
 public function checkLogin($username,$password){
 	$query=$this->db->where(['username'=>$username,'password'=>$password])->get ("user");
-	if($query->num_rows()){
-		returen $query->row()->user_id;
+	if($query->num_rows()>=1){
+		return $query->row()->user_id;
 
 		$this->session->set_userdata($sess_array);
-				if($this->session->userdata('user_id')!='')
-                   $url = base_url()."Home/dashbaord";
-                   else
-                   $url = base_url()."Home/login";    
-						header("Location:$url");
-						exit();
-				}
+				
+        echo "get login:";				
 	}else {
-		return FALSE
-	}
-	
+		echo "not login";
+	}	
 }
 
-
 }
-
-
-
-
-
 
 ?>
