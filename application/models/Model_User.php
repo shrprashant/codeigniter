@@ -32,6 +32,15 @@ public function checkLogin($username,$password){
 	}	
 }
 
+	 public function selectUser(){
+            $query = $this->db->get('user');
+             return $query-> result();  
+        }
+
+     public function deleteUser($id){
+     	$this->db->where('user_id', $id);
+        $this->db->delete('user'); 
+     }   
 }
 
 ?>

@@ -73,6 +73,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
 
 
+       public function selectUser(){
+        $this->load->model('Model_User');
+        $data['message']=$this->Model_User->selectUser();
+        $this->load->view('viewUser',$data);
+       }
+
+       public function deleteUser(){
+        $id=$this->uri->segment(3);
+        $this->load->model('Model_User');
+        $data['message']=$this->Model_User->deleteUser($id);
+         redirect('/User/selectUser/');
+       }
+
     }
 
 ?>
