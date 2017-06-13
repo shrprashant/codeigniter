@@ -31,7 +31,7 @@ ddaccordion.init({
 	}
 })
 </script>
-<script src="<?php echo base_url();?>assets/js/jquery.jclock-1.2.0.js.txt" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.jclock-1.2.0.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jconfirmaction.jquery.js"></script>
 <script type="text/javascript">
 	
@@ -56,7 +56,7 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><img src="<?php echo base_url();?>assets/images/images/images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
+    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo site_url('Home/index')?>">Logout</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -208,7 +208,7 @@ $(function($) {
     
     <div class="right_content">            
         
-    <h2>Items Details</h2> 
+    <h2>Items Ordered</h2> 
                     
                     
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">

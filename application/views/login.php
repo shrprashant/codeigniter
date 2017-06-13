@@ -23,7 +23,7 @@
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 
 </script>
 
@@ -52,7 +52,7 @@
 <div class="regform"&emsp;&emsp;&emsp;>
 	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-   <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+   
    
   <div class="container">
 			<div class="row main">
@@ -80,16 +80,9 @@
 								</div>
 							</div>
 						</div>
-
-						<div> <dl>
-                        <dt><label></label></dt>
-                        <dd>
-                    <input type="checkbox" name="interests[]" id="" value="" /><label class="check_label">Remember me</label>
-                        </dd>
-                    </dl>
-                    
-              
-             </div>
+		<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+  							<input type="checkbox" name="interests[]" id="" value="" /><label class="check_label">Remember me</label>
+				
 					
 						<div class="form-group ">
 							<button href="#" type="submit" name="login" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>

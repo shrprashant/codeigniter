@@ -56,7 +56,7 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><img src="<?php echo base_url();?>assets/images/images/images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
+    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo site_url('Home/index')?>" class="logout">Logout</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -216,12 +216,12 @@ $(function($) {
      <h2>Add New Category</h2>
      
          <div class="form">
-         <form action="<?php echo base_url();?>Home/addCategory" method="post" class="niceform">
+         <form action="<?php echo base_url();?>Item/addCategory" method="post" class="niceform">
          
                 <fieldset>
                     <dl>
                         <dt><label for="Category">Add Category:</label></dt>
-                        <dd><input type="text" name="" id="" size="54" /></dd>
+                        <dd><input type="text" name="category_name" id="" size="30" /></dd>
                     </dl>
                     <dl>
                         <dt>&nbsp;</dt>

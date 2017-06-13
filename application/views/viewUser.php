@@ -31,6 +31,7 @@ ddaccordion.init({
 	}
 })
 </script>
+</script>
 <script src="<?php echo base_url();?>assets/js/jquery.jclock-1.2.0.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jconfirmaction.jquery.js"></script>
 <script type="text/javascript">

@@ -19,6 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function petguide(){
         	$this->load->view('petguide');
         }
+
+        public function addCategory(){
+            $this->load->view('addCategory');
+        }
         public function petmart(){
         	$this->load->view('petmart');
         }
@@ -37,6 +41,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function admin(){
             $this->load->view('indexAdmin');
+        }
+
+        public function addItem(){
+            $this->load->view('addItem');
         }
 
    }

@@ -31,7 +31,7 @@ ddaccordion.init({
 	}
 })
 </script>
-<script src="<?php echo base_url();?>assets/js/jquery.jclock-1.2.0.js.txt" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.jclock-1.2.0.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jconfirmaction.jquery.js"></script>
 <script type="text/javascript">
 	
@@ -56,7 +56,7 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><img src="<?php echo base_url();?>assets/images/images/images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
+    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo site_url('Home/index')?>" class="logout">Logout</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -78,8 +78,8 @@ $(function($) {
                     <li><a href="">Manage Users<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="" title="">Add User Info</a></li>
-                        <li><a href="" title="">Update User Info</a></li>
+                        <li><a href="" title="">View User Info</a></li>
+                        
                         <li><a href="" title="">Delete User Info</a></li>
                        
                         </ul>
@@ -138,16 +138,14 @@ $(function($) {
                     <li><a href="">Update Category</a></li>
                     </ul>
                 </div>
-                <a class="menuitem submenuheader" href="">Add new products</a>
-             <!--   <div class="submenu">
+                <a class="menuitem submenuheader" href="">Registered Users</a>
+                <div class="submenu">
                     <ul>
-                    <li><a href="">Sidebar submenu</a></li>
-                    <li><a href="">Sidebar submenu</a></li>
-                    <li><a href="">Sidebar submenu</a></li>
-                    <li><a href="">Sidebar submenu</a></li>
-                    <li><a href="">Sidebar submenu</a></li>
+                    <li><a href="">View Users</a></li>
+                    <li><a href="">Delete Users</a></li>
+                  
                     </ul>
-                </div>-->
+                </div>
                 <a class="menuitem" href="">Items Booked</a>
                 
                 <a class="menuitem_green" href="">Services Booking</a>
@@ -207,27 +205,68 @@ $(function($) {
     </div>  
     
     <div class="right_content">            
-     
-     
- 
-     
-     
+        
+   
            
-     <h2>Add New Category</h2>
+     <h2>Add New Items</h2>
      
          <div class="form">
-         <form action="<?php echo base_url();?>Home/addCategory" method="post" class="niceform">
+         <form action="<?php echo base_url();?>Item/addItem" method="post" class="niceform">
          
                 <fieldset>
                     <dl>
-                        <dt><label for="Category">Add Category:</label></dt>
-                        <dd><input type="text" name="" id="" size="54" /></dd>
+                        <dt>
+                          <label for="Name"><strong>Item Name</strong></label></dt>
+                        <dd><input type="text" name="item_name" id="" size="50" /></dd>
                     </dl>
                     <dl>
-                        <dt>&nbsp;</dt>
+                        <dt>
+                          <label for="price"><strong>Price</strong></label></dt>
+                        <dd><input type="text" name="item_price" id="" size="50" /></dd>
                     </dl>
                     
                     
+                    <dl>
+                        <dt><label for="category">Select categories:</label></dt>
+                        <dd>
+                            <select size="1" name="item_category" id="">
+                                <option value="">Select category </option>
+                                <?php if(count($getCategory)):?>
+                                    <?php foreach($getCategory as $category):?>
+                                     <option value=<?php echo $category->category_id?>>
+                                                   <?php echo $category->category_name;?>  
+                                     </option> 
+                                 <?php endforeach;?>
+                             <?php else:?>
+                             <?php endif;?>
+                            </select>
+                        </dd>
+                    </dl>
+                        
+                     <dl>
+                        &emsp;
+                     </dl>   
+                                              
+                    <dl>
+                        <dt><label for="Status">Item Status</label></dt>
+                        <dd>
+                            <input type="radio" value="available" id="" name="item_status" /><label class="check_label">Available</label>
+                            <input type="radio" value="unavailable" id="" name="item_status" /><label class="check_label">Unavailable</label>
+                            <input type="radio" value="commingsoon" id="" name="item_status" /><label class="check_label">Comming soon</label>
+                      </dl>
+                    
+                    
+                    
+                    <dl>
+                        <dt><label for="upload">Upload a File:</label></dt>
+                        <dd><input type="file" name="upload" id="upload" /></dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>
+                          <label for="comments">Description</label></dt>
+                        <dd><textarea name="description" id="comments" rows="5" cols="36"></textarea></dd>
+                    </dl>
                     
                      <dl class="submit">
                     <input type="submit" name="submit" id="submit" value="Submit" />

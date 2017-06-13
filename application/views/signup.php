@@ -24,7 +24,7 @@
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/reg.js"></script>
     <!-- Website CSS style -->
@@ -39,11 +39,25 @@
     <link href='<?php echo base_url();?>assets/css/reg.css' rel='stylesheet' type='text/css'>
    	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <script src="<?php echo base_url();?>assets/js/jquerymin.js" type="text/javascript"></script>
+		<script>
+		function pwd(){
+			var password=document.form.password.value;
+			var repassword=document.form.repassword.value;
+			if (password === repassword){
+				document.getElementById('message').innerHTML = "Password Match";			
+			} else{
+				document.getElementById('message').innerHTML = "Password not Matched";			
+			}
+		}
+		
+		
+		</script>
     
 <div class="regform"&emsp;&emsp;&emsp;>
-	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-   <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-   <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+   
+ 
   <div class="container">
 			<div class="r">
 				<div class="main-login main-center">
@@ -55,6 +69,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									
 									<input type="text" class="form-control" name="first_name" id="name"  placeholder="Enter your First Name"/>
 								</div>
 							</div>
@@ -76,7 +91,7 @@
 							<label for="username" class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon">@<i class="fa fa-users fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
 								</div>
 							</div>
@@ -97,7 +112,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="repassword" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="repassword"onchange="pwd();"  id="confirm"  placeholder="Confirm your Password"/> <span id="message"> </span>
 								</div>
 							</div>
 						</div>
@@ -113,10 +128,10 @@
 						
 						
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Address </label>
+							<label for="address" class="cols-sm-2 control-label">Address </label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"id="sizing-addon1"><i class="fa fa-users fa" aria-hidden="true"></i>Nepal</span>
 									<input type="text" class="form-control" name="address" id="address"  placeholder="Enter your full address"/>
 								</div>
 							</div>
@@ -133,7 +148,7 @@
 						</div>
 						
 						<div class="form-group ">
-							<button type="submit"  name ='signup'id="button" class="btn btn-primary btn-lg btn-block login-button">Register
+							<button type="submit"  name ='signup'id="button" class="btn btn-success btn-lg btn-block login-button">Register
 							</button>
 						
 						</div>

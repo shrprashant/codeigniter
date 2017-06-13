@@ -29,7 +29,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     $firstname=$this->input->post('first_name');
                     $lastname=$this->input->post('last_name');  
                     $username=$this->input->post('username');
-                    $password=$this->input->post('password');
+                    $password=md5($this->input->post('password'));
+
+                    $repassword=md5($this->input->post('repassword'));
                     $phonenumber=$this->input->post('phone_number');
                     $address=$this->input->post('address');
                     $email=$this->input->post('email_id');
@@ -52,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function login(){ 
         
             $username=$this->input->post('username');
-            $password=$this->input->post('password');
+            $password=md5($this->input->post('password'));
             
             $this->load->model('Model_User');
             
