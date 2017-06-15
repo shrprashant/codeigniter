@@ -5,40 +5,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>City Pet Service</title>
+<title>Add Item</title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style1.css" />
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/Ajquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/ddaccordion.js"></script>
 <script type="text/javascript">
 ddaccordion.init({
-	headerclass: "submenuheader", //Shared CSS class name of headers group
-	contentclass: "submenu", //Shared CSS class name of contents group
-	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
-	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
-	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
-	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
-	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
-	animatedefault: false, //Should contents open by default be animated into view?
-	persiststate: true, //persist state of opened contents within browser session?
-	toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
-	togglehtml: ["suffix", "<img src='<?php echo base_url();?>assets/images/images/images/plus.gif' class='statusicon' />", "<img src='<?php echo base_url();?>assets/images/images/images/minus.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
-	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
-	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
-		//do nothing
-	},
-	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
-		//do nothing
-	}
+    headerclass: "submenuheader", //Shared CSS class name of headers group
+    contentclass: "submenu", //Shared CSS class name of contents group
+    revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+    mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+    collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+    defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+    onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+    animatedefault: false, //Should contents open by default be animated into view?
+    persiststate: true, //persist state of opened contents within browser session?
+    toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+    togglehtml: ["suffix", "<img src='<?php echo base_url();?>assets/images/images/images/plus.gif' class='statusicon' />", "<img src='<?php echo base_url();?>assets/images/images/images/minus.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+    animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+    oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+        //do nothing
+    },
+    onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+        //do nothing
+    }
 })
 </script>
 <script src="<?php echo base_url();?>assets/js/jquery.jclock-1.2.0.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jconfirmaction.jquery.js"></script>
 <script type="text/javascript">
-	
-	$(document).ready(function() {
-		$('.ask').jConfirmAction();
-	});
-	
+    
+    $(document).ready(function() {
+        $('.ask').jConfirmAction();
+    });
+    
 </script>
 <script type="text/javascript">
 $(function($) {
@@ -53,7 +53,7 @@ $(function($) {
 <body>
 <div id="main_container">
 
-	<div class="header">
+    <div class="header">
     <div class="logo"><a href="#"><img src="<?php echo base_url();?>assets/images/images/images/logo.gif" alt="" title="" border="0" /></a></div>
     
     <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo site_url('Home/index')?>" class="logout">Logout</a></div>
@@ -68,7 +68,17 @@ $(function($) {
                     <li><a href="l">Manage Categories<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="" title="">Add Category</a></li>
+                        <li><a href="<?php echo site_url('Home/addCategory');?>" title="">Add Category</a></li>
+                        <li><a href="" title="">Update Category</a></li>
+                        <li><a href="" title="">Delete Category</a></li>
+                       
+                      </ul>
+                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    </li>
+                    <li><a href="">Manage Product<!--[if IE 7]><!--></a><!--<![endif]-->
+                    <!--[if lte IE 6]><table><tr><td><![endif]-->
+                        <ul>
+                        <li><a href="<?php echo site_url('Admin/selectCategory');?>" title="">Add Product</a></li>
                         <li><a href="" title="">Update Category</a></li>
                         <li><a href="" title="">Delete Category</a></li>
                        
@@ -78,9 +88,9 @@ $(function($) {
                     <li><a href="">Manage Users<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="" title="">View User Info</a></li>
+                        <li><a href="<?php echo site_url('User/selectUser');?>" title="">View User Info</a></li>
                         
-                        <li><a href="" title="">Delete User Info</a></li>
+                        <li><a href="<?php echo site_url('User/selectUser');?>" title="">Delete User Info</a></li>
                        
                         </ul>
                     <!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -105,7 +115,6 @@ $(function($) {
                  
                     </ul>
                     </div> 
-                    
                     
                     
                     
@@ -138,14 +147,16 @@ $(function($) {
                     <li><a href="">Update Category</a></li>
                     </ul>
                 </div>
-                <a class="menuitem submenuheader" href="">Registered Users</a>
-                <div class="submenu">
+                <a class="menuitem submenuheader" href="">Add new products</a>
+             <!--   <div class="submenu">
                     <ul>
-                    <li><a href="">View Users</a></li>
-                    <li><a href="">Delete Users</a></li>
-                  
+                    <li><a href="">Sidebar submenu</a></li>
+                    <li><a href="">Sidebar submenu</a></li>
+                    <li><a href="">Sidebar submenu</a></li>
+                    <li><a href="">Sidebar submenu</a></li>
+                    <li><a href="">Sidebar submenu</a></li>
                     </ul>
-                </div>
+                </div>-->
                 <a class="menuitem" href="">Items Booked</a>
                 
                 <a class="menuitem_green" href="">Services Booking</a>
@@ -206,98 +217,80 @@ $(function($) {
     
     <div class="right_content">            
         
-   
+    <h2><strong>Item'</strong>s Details</h2> 
+                    
+                    
+<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+    <thead>
+    	<tr>
+        	<th scope="col" class="rounded-company"></th>
+            <th scope="col" class="rounded">Name</th>
+            <th scope="col" class="rounded">Price</th>
+            <th scope="col" class="rounded">Category</th>
+            <th scope="col" class="rounded">Description</th>
+            <th scope="col" class="rounded">Status</th>
+            <th scope="col" class="rounded">Edit</th>
            
-     <h2>Add New Items</h2>
+        
+            <th scope="col" class="rounded-q4">Delete</th>
+        </tr>
+    </thead>
+        <tfoot>
+    	<tr>
+        	<td colspan="6" class="rounded-foot-left"><em></em></td>
+        	<td class="rounded-foot-right">&nbsp;</td>
+
+        </tr>
+    </tfoot>
+    <tbody>
+    	<tr>
+       <?php
+			foreach($message as $row){
+				?>
+        	<td><input type="checkbox" name="" /></td>
+            <td><?php echo $row->item_name;?></td>
+            <td><?php  echo $row->item_price;?></td>
+            <td><?php  echo $row->item_category;?></td>
+            <td><?php  echo $row->item_desc;?></td>
+            <td><?php echo $row->item_status;?></td>
+            
+            <td> <a href="<?php echo base_url().'Home/findProduct/' . $row->item_id; ?>"class="ask"> <img src="<?php echo base_url();?>assets/images/images/images/user_edit.png" alt="edit" title="" border="0" /></a></td>
+  
+            <td> <a href="<?php echo base_url().'Admin/deleteProduct/' . $row->item_id; ?>"class="ask"> <img src="<?php echo base_url();?>assets/images/images/images/trash.png" alt="delete" title="" border="0" /></a></td>
+  
+          <!-- 
+            <td><a href="#" class="ask"><img src="<?php echo base_url();?>assets/images/images/images/trash.png" alt="delete" title="" border="0" /></a></td> -->
+        </tr>
+        <?php
+			}
+		?>
+    </tbody>
+</table>
+
+	 <a href="#" class="bt_green"><span class="bt_green_lft"></span></a><a href="#" class="bt_red"><span class="bt_red_r"></span></a> 
      
-         <div class="form">
-         <form action="<?php echo base_url();?>Item/addItem" method="post" class="niceform">
-         
-                <fieldset>
-                    <dl>
-                        <dt>
-                          <label for="Name"><strong>Item Name</strong></label></dt>
-                        <dd><input type="text" name="item_name" id="" size="50" /></dd>
-                    </dl>
-                    <dl>
-                        <dt>
-                          <label for="price"><strong>Price</strong></label></dt>
-                        <dd><input type="text" name="item_price" id="" size="50" /></dd>
-                    </dl>
-                    
-                    
-                    <dl>
-                        <dt><label for="category">Select categories:</label></dt>
-                        <dd>
-                            <select size="1" name="item_category" id="">
-                                <option value="">Select category </option>
-                                <?php if(count($getCategory)):?>
-                                    <?php foreach($getCategory as $category):?>
-                                     <option value=<?php echo $category->category_id?>>
-                                                   <?php echo $category->category_name;?>  
-                                     </option> 
-                                 <?php endforeach;?>
-                             <?php else:?>
-                             <?php endif;?>
-                            </select>
-                        </dd>
-                    </dl>
-                        
-                     <dl>
-                        &emsp;
-                     </dl>   
-                                              
-                    <dl>
-                        <dt><label for="Status">Item Status</label></dt>
-                        <dd>
-                            <input type="radio" value="available" id="" name="item_status" /><label class="check_label">Available</label>
-                            <input type="radio" value="unavailable" id="" name="item_status" /><label class="check_label">Unavailable</label>
-                            <input type="radio" value="commingsoon" id="" name="item_status" /><label class="check_label">Comming soon</label>
-                      </dl>
-                    
-                    
-                    
-                    <dl>
-                        <dt><label for="upload">Upload a File:</label></dt>
-                        <dd><input type="file" name="upload" id="upload" /></dd>
-                    </dl>
-                    
-                    <dl>
-                        <dt>
-                          <label for="comments">Description</label></dt>
-                        <dd><textarea name="description" id="comments" rows="5" cols="36"></textarea></dd>
-                    </dl>
-                    
-                     <dl class="submit">
-                    <input type="submit" name="submit" id="submit" value="Submit" />
-                     </dl>
-                     
-                     
-                    
-                </fieldset>
-                
-         </form>
-         </div>  
-      
+     
+      <div class="pagination">
+        <span class="disabled"><< prev</span><span class="current">1</span><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>…<a href="">10</a><a href="">11</a><a href="">12</a>...<a href="">100</a><a href="">101</a><a href="">next >></a>
+        </div> 
+        
+     
+     <h2>&nbsp;</h2>
+     
      
      </div><!-- end of right content-->
             
                     
-  </div>   <!--end of center content -->               
-                    
-                    
-    
-    
-    <div class="clear"></div>
-    </div> <!--end of main content-->
-	
-    
-    <div class="footer">
-    
-    	<div class="left_footer"> ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></div>
-    	<div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
-    
+  </div>   <!--en
+     
+     <h2>ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></h2>
     </div>
+    </div>
+    </div>
+    <div class="footer">
+      <div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+    
+  </div>
 
 </div>		
 </body>

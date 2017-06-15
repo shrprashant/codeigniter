@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Add Item</title>
+<title>City Pet Service</title>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style1.css" />
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/Ajquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/ddaccordion.js"></script>
@@ -56,7 +56,7 @@ $(function($) {
     <div class="header">
     <div class="logo"><a href="#"><img src="<?php echo base_url();?>assets/images/images/images/logo.gif" alt="" title="" border="0" /></a></div>
     
-    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo site_url('Home/index')?>" class="logout">Logout</a></div>
+    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo site_url('Home/index')?>">Logout</a></div>
     <div class="jclock"></div>
     </div>
     
@@ -68,17 +68,7 @@ $(function($) {
                     <li><a href="l">Manage Categories<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="<?php echo site_url('Home/addCategory');?>" title="">Add Category</a></li>
-                        <li><a href="" title="">Update Category</a></li>
-                        <li><a href="" title="">Delete Category</a></li>
-                       
-                      </ul>
-                    <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-                    </li>
-                    <li><a href="">Manage Product<!--[if IE 7]><!--></a><!--<![endif]-->
-                    <!--[if lte IE 6]><table><tr><td><![endif]-->
-                        <ul>
-                        <li><a href="<?php echo site_url('Admin/selectCategory');?>" title="">Add Product</a></li>
+                        <li><a href="<?php echo base_url();?>Item/addCategory" title="">Add Category</a></li>
                         <li><a href="" title="">Update Category</a></li>
                         <li><a href="" title="">Delete Category</a></li>
                        
@@ -88,9 +78,9 @@ $(function($) {
                     <li><a href="">Manage Users<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="<?php echo site_url('User/selectUser');?>" title="">View User Info</a></li>
+                        <li><a href="" title="">view User Info</a></li>
                         
-                        <li><a href="<?php echo site_url('User/selectUser');?>" title="">Delete User Info</a></li>
+                        <li><a href="" title="">Delete User Info</a></li>
                        
                         </ul>
                     <!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -125,7 +115,7 @@ $(function($) {
     
     <div class="left_content">
     
-    		<div class="sidebar_search">
+            <div class="sidebar_search">
             <form>
             <input type="text" name="" class="search_input" value="search keyword" onclick="this.value=''" />
             <input type="image" class="search_submit" src="<?php echo base_url();?>assets/images/images/images/search.png" />
@@ -136,7 +126,7 @@ $(function($) {
               <a class="menuitem submenuheader" href="">Items</a>
               <div class="submenu">
                   <ul>
-                    <li><a href="">Add Items</li>
+                    <li><a href="<?php echo site_url('Item/selectCategory')?>">Add Items</li>
                     <li><a href="">Update Items</li>
                     <li><a href="">Delete Items</a></li>
                 </ul>
@@ -217,89 +207,103 @@ $(function($) {
     </div>  
     
     <div class="right_content">            
-        
-    <h2><strong>User'</strong>s Details</h2> 
+     
+           
+ <h2>Update  Items</h2>
+      <div class="form">
+         <form action="<?php echo base_url();?>Item/addItem" method="post" class="niceform">
+         
+                <fieldset>
+                     <dl>
+                        <dt>
+                          <label for="Name"><strong>Item ID</strong></label></dt>
+                        <dd><input type="text" name="item_id" id="" size="50" /></dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                          <label for="Name"><strong>Item Name</strong></label></dt>
+                        <dd><input type="text" name="item_name" id="" size="50" /></dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                          <label for="price"><strong>Price</strong></label></dt>
+                        <dd><input type="text" name="item_price" id="" size="50" /></dd>
+                    </dl>
                     
                     
-<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <thead>
-    	<tr>
-        	<th scope="col" class="rounded-company"></th>
-            <th scope="col" class="rounded">Firstname</th>
-            <th scope="col" class="rounded">Lastname</th>
-            <th scope="col" class="rounded">Username</th>
-            <th scope="col" class="rounded">Phone Number</th>
-            <th scope="col" class="rounded">Address</th>
-            <th scope="col" class="rounded">Email Id</th>
-        
-            <th scope="col" class="rounded-q4">Delete</th>
-        </tr>
-    </thead>
-        <tfoot>
-    	<tr>
-        	<td colspan="6" class="rounded-foot-left"><em></em></td>
-        	<td class="rounded-foot-right">&nbsp;</td>
-
-        </tr>
-    </tfoot>
-    <tbody>
-    	<tr>
-       <?php
-			foreach($message as $row){
-				?>
-        	<td><input type="checkbox" name="" /></td>
-            <td><?php echo $row->first_name;?></td>
-            <td><?php  echo $row->last_name;?></td>
-            <td><?php  echo $row->username;?></td>
-            <td><?php  echo $row->phone_number;?></td>
-            <td><?php echo $row->address;?></td>
-            <td><?php  echo $row->email_id;?></td>
-            <td> <a href="<?php echo base_url().'User/deleteUser/' . $row->user_id; ?>"class="ask"> <img src="<?php echo base_url();?>assets/images/images/images/trash.png" alt="delete" title="" border="0" /></a></td>
-  
-          <!-- 
-            <td><a href="#" class="ask"><img src="<?php echo base_url();?>assets/images/images/images/trash.png" alt="delete" title="" border="0" /></a></td> -->
-        </tr>
-        <?php
-			}
-		?>
-    </tbody>
-</table>
-
-	 <a href="#" class="bt_green"><span class="bt_green_lft"></span></a><a href="#" class="bt_red"><span class="bt_red_r"></span></a> 
-     
-     
-      <div class="pagination">
-        <span class="disabled"><< prev</span><span class="current">1</span><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>…<a href="">10</a><a href="">11</a><a href="">12</a>...<a href="">100</a><a href="">101</a><a href="">next >></a>
-        </div> 
-        
-     
-     <h2>&nbsp;</h2>
-     <div class="form">
-       <form action="" method="post" class="niceform">
-       <fieldset>
+                    <dl>
+                        <dt><label for="category">Select categories:</label></dt>
+                        <dd>
+                            <select size="1" name="item_category" id="">
+                                <option value="">Select category </option>
+                                <?php if(count($getCategory)):?>
+                                    <?php foreach($getCategory as $category):?>
+                                     <option value=<?php echo $category->category_id?>>
+                                                   <?php echo $category->category_name;?>  
+                                     </option> 
+                                 <?php endforeach;?>
+                             <?php else:?>
+                             <?php endif;?>
+                            </select>
+                        </dd>
+                    </dl>
+                        
+                     <dl>
+                        &emsp;
+                     </dl>   
+                                              
+                    <dl>
+                        <dt><label for="Status">Item Status</label></dt>
+                        <dd>
+                            <input type="radio" value="available" id="" name="item_status" /><label class="check_label">Available</label>
+                            <input type="radio" value="unavailable" id="" name="item_status" /><label class="check_label">Unavailable</label>
+                            <input type="radio" value="commingsoon" id="" name="item_status" /><label class="check_label">Comming soon</label>
+                      </dl>
+                    
+                    
+                    
+                    <dl>
+                        <dt><label for="upload">Upload a File:</label></dt>
+                        <dd><input type="file" name="upload" id="upload" /></dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>
+                          <label for="comments">Description</label></dt>
+                        <dd><textarea name="description" id="comments" rows="5" cols="36"></textarea></dd>
+                    </dl>
+                    
+                     <dl class="submit">
+                    <input type="submit" name="submit" id="submit" value="Submit" />
+                     </dl>
                      
                      
                     
-          </fieldset>
+                </fieldset>
                 
-       </form>
-      </div>  
-      
+         </form>
+         </div>  
+           
      
      </div><!-- end of right content-->
             
                     
-  </div>   <!--en
-     
-     <h2>ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></h2>
-    </div>
-    </div>
-    </div>
-    <div class="footer">
-      <div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+  </div>   <!--end of center content -->               
+                    
+                    
     
-  </div>
+    
+    <div class="clear"></div>
+    </div> <!--end of main content-->
+    
+    
+    <div class="footer">
+    
+        <div class="left_footer"> ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></div>
+        <div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+    
+    </div>
 
-</div>		
+</div>      
 </body>
 </html>

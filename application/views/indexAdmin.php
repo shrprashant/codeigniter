@@ -68,7 +68,7 @@ $(function($) {
                     <li><a href="l">Manage Categories<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="" title="">Add Category</a></li>
+                        <li><a href="<?php echo base_url();?>Item/addCategory" title="">Add Category</a></li>
                         <li><a href="" title="">Update Category</a></li>
                         <li><a href="" title="">Delete Category</a></li>
                        
@@ -78,8 +78,8 @@ $(function($) {
                     <li><a href="">Manage Users<!--[if IE 7]><!--></a><!--<![endif]-->
                     <!--[if lte IE 6]><table><tr><td><![endif]-->
                         <ul>
-                        <li><a href="" title="">Add User Info</a></li>
-                        <li><a href="" title="">Update User Info</a></li>
+                        <li><a href="" title="">view User Info</a></li>
+                        
                         <li><a href="" title="">Delete User Info</a></li>
                        
                         </ul>
@@ -126,7 +126,7 @@ $(function($) {
               <a class="menuitem submenuheader" href="">Items</a>
               <div class="submenu">
                   <ul>
-                    <li><a href="">Add Items</li>
+                    <li><a href="<?php echo site_url('Item/selectCategory')?>">Add Items</li>
                     <li><a href="">Update Items</li>
                     <li><a href="">Delete Items</a></li>
                 </ul>

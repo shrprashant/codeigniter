@@ -43,10 +43,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('indexAdmin');
         }
 
-        public function addItem(){
-            $this->load->view('addItem');
+        public function addProduct(){
+            $this->load->view('addProduct');
         }
 
+        public function selectProduct(){
+            $this->load->view('selectProduct');
+        }
+
+        public function editProduct(){
+            $this->load->view('editProduct');
+        }
+		public function addPet(){
+    		$this->load->view('addPet');
+    	}
    }
 
 
