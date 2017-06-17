@@ -27,19 +27,26 @@ class Admin extends CI_Controller{
     }
 
      public function addProduct(){
+     
+     	
      //uploading image
 		$config['upload_path']="assets/images/images";
 		$config['allowed_types']="jpg|gif|png";
-		$config['max-width']="250";
-		$config['max_height']="250";
-
-		
+		/*$config['max-width']="250";
+		$config['max_height']="250";*/
 		
 		$this->load->library('upload',$config);
-		$this->upload->do_upload('file');
+		$this->upload->do_upload('images');
 		
 		$data=array('upload_data'=>$this->upload->data());
 		
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('item_name', 'Item Name', 'required|trim|max_length[30]');
+		$this->form_validation->set_rules('item_price', 'Item Price', 'required|numeric|trim|max_length[5]');
+		$this->form_validation->set_rules('item_category', 'Category', 'required');
+		$this->form_validation->set_rules('item_desc', 'Item Description', 'required|trim|max_length[500]');
+		
+		if($this->form_validation->run()){
 		$Name=$this->input->post('item_name');
 		$Price=$this->input->post('item_price');
 		$Category=$this->input->post('item_category');
@@ -54,29 +61,27 @@ class Admin extends CI_Controller{
 		$data['insertmsg']="data inserted successfully";
 		$this->load->view('addProduct',$data);
 		
-		
+		} else{
+              	$this->load->view('addProduct');
+         }
     }
 
-
+// to show in the table while 
 
        public function selectProduct(){
-/*
-   		$this->load->model('Model_Admin');
-        $selectCategory=$this->Model_Admin->selectCategory();
-         // printing to see wether value is passed in array or not print_r($getCategory);
-        $this->load->view('selectProduct',['getCategory'=>$selectCategory]);*/
 
         $this->load->model('Model_Admin');
         $data['message']=$this->Model_Admin->selectProduct();
         $this->load->view('selectProduct',$data);
        
     }
-
-     public function findProduct(){
-
-
+    // to load in the edit form
+     public function findProduct($id){
+     	$id=$this->uri->segment(3);
+     	
         $this->load->model('Model_Admin');
-        $data['message']=$this->Model_Admin->findProduct();
+        $data['message']=$this->Model_Admin->findProduct($id);
+        $data['messages']=$this->Model_Admin->selectCategory();
         $this->load->view('editProduct',$data);
        
     }
@@ -99,17 +104,23 @@ class Admin extends CI_Controller{
      //uploading image
 		$config['upload_path']="assets/images/images";
 		$config['allowed_types']="jpg|gif|png";
-		$config['max-width']="250";
-		$config['max_height']="250";
-
-		
+		/*$config['max-width']="250";
+		$config['max_height']="250";*/
 		
 		$this->load->library('upload',$config);
-		$this->upload->do_upload('file');
+		$this->upload->do_upload('images');
 		
 		$data=array('upload_data'=>$this->upload->data());
 		
-		$id=$this->input->post('item_id');
+			$this->load->library('form_validation');
+		$this->form_validation->set_rules('hiddenID', 'Hidden ID', 'required');
+		$this->form_validation->set_rules('item_name', 'Item Name', 'required|trim|max_length[25]');
+		$this->form_validation->set_rules('item_price', 'Item Price', 'required|numeric|trim|max_length[4]');
+		$this->form_validation->set_rules('item_desc', ' Description', 'required|trim|max_length[500]');
+		
+		if($this->form_validation->run()){
+
+		$id=$this->input->post('hiddenID');
 		$Name=$this->input->post('item_name');
 		$Price=$this->input->post('item_price');
 		$Category=$this->input->post('item_category');
@@ -122,17 +133,20 @@ class Admin extends CI_Controller{
 		$this->Model_Admin->editProduct($id,$Name,$Price,$Category,$Description,$Status,$Image);
 		
 		$data['insertmsg']="data inserted successfully";
-		$this->load->view('selectProduct',$data);
-		
+		  redirect('/Admin/selectProduct/');
+		}else{
+			echo validation_errors();
+		}
 		
     }
 
     public function deleteProduct(){
-		$this->load->model('Model_Admin');
-		$id=$this->input->get('item_id');
-		$this->Model_Admin->deleteProduct($id);
-		 redirect('/Admin/selectProduct/');
-		echo "data deleted";
+    	
+	   $id=$this->uri->segment(3);
+        $this->load->model('Model_Admin');
+        $data['message']=$this->Model_Admin->deleteProduct($id);
+         redirect('/Admin/selectProduct/');
+		
 	}
 
 

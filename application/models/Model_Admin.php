@@ -29,37 +29,35 @@ class Model_Admin extends CI_Model{
 
 	public function selectProduct(){
 		$query = $this->db->get('item');
-             if($query->num_rows()>0){
-             return $query-> result();  
-		}
+        return $query-> result();  
 	}
 
-	public function findProduct($itemID){
-		$this->db->where("item_id",$itemID);
-		$result=$this->db->get("category");
+	public function findProduct($id){
+		$this->db->where("item_id",$id);
+		$result=$this->db->get("item");
 		return $result->result();
 	}
 
 
-	public function editProduct($itemID,$Name,$Price,$Category,$Description,$Status,$Image){
+	public function editProduct($id,$Name,$Price,$Category,$Description,$Status,$Image){
 		$array=array(
-		"item_id"=>$itemID,
+		"item_id"=>$id,
 		"item_name"=>$Name,
 		"item_price"=>$Price,
 		"item_category"=>$Category,
 		"item_desc"=>$Description,
 		"item_status"=>$Status,	
 		"item_image"=>$Image);
-		$this->db->where('item_id',$itemID);
-		$this->db->insert("item",$array);
+		$this->db->where('item_id',$id);
+		$this->db->update("item",$array);
 		return"data updated successfully";
 		
 	}
-	public function deleteProduct($itemID){
+	public function deleteProduct($id){
 		
-		$this->db->where("item_id",$itemID);
-		$this->db->delete('item');
-		return "data deleted";
+		$this->db->where("item_id",$id);
+		$result=$this->db->delete('item');
+		return "data deleted successfully";
 		
 	}
 }
