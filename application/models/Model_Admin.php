@@ -3,16 +3,20 @@
 class Model_Admin extends CI_Model{
 	
 	public function addProduct($Name,$Price,$Category,$Description,$Status,$Image){
+
 		$array=array(
 		"item_name"=>$Name,
 		"item_price"=>$Price,
-		"item_category"=>$Category,
+		"category_id"=>$Category,
 		"item_desc"=>$Description,
 		"item_status"=>$Status,	
 		"item_image"=>$Image);
 		$this->db->insert("item",$array);
 		
 	}
+
+
+	
 	public function addCategory($Category){
 		$array=array(
 		"category_name"=>$Category	
@@ -44,7 +48,7 @@ class Model_Admin extends CI_Model{
 		"item_id"=>$id,
 		"item_name"=>$Name,
 		"item_price"=>$Price,
-		"item_category"=>$Category,
+		"category_id"=>$Category,
 		"item_desc"=>$Description,
 		"item_status"=>$Status,	
 		"item_image"=>$Image);

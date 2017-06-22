@@ -19,13 +19,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function petguide(){
         	$this->load->view('petguide');
         }
+        public function petmart(){
+            $this->load->view('petmart');
+        }
 
         public function addCategory(){
             $this->load->view('addCategory');
         }
-        public function petmart(){
-        	$this->load->view('petmart');
-        }
+        
 
         public function login(){
             $this->load->view('login');
@@ -36,8 +37,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }    
 
     	public function dashboard(){
-    		$this->load->view('dashboard');
+    		$this->load->view('dashboard/dashboard');
     	}
+
+         public function about1(){
+            $this->load->view('dashboard/about1');
+        }
+        public function contact1(){
+            $this->load->view('dashboard/contact1');
+        }
+         public function petservice1(){
+            $this->load->view('dashboard/petservice1');
+        }
+        public function petguide1(){
+            $this->load->view('dashboard/petguide1');
+        }
+        public function petmart1(){
+            $this->load->view('dashboard/petmart1');
+        }
 
         public function admin(){
             $this->load->view('indexAdmin');

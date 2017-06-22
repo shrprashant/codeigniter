@@ -217,8 +217,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <h2>Add New Items</h2>
      
          <div class="form">
-         <form action="<?php echo base_url();?>Admin/addProduct" method="post" class="niceform">
-         
+        <?php echo form_open_multipart('Admin/addProduct','class="niceform"'); ?>
                 <fieldset>
                     <dl>
                         <dt>
@@ -235,11 +234,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <dl>
                         <dt><label for="category">Select categories:</label></dt>
                         <dd>
-                            <select size="1" name="item_category" id="">
+                            <select size="1" name="category_id" id="">
                                 <option value="">Select category </option>
                                 <?php if(count($getCategory)):?>
                                     <?php foreach($getCategory as $category):?>
-                                     <option value=<?php echo $category->category_id?>>
+                                     <option value='<?php echo $category->category_id?>'>
                                                    <?php echo $category->category_name;?>  
                                      </option> 
                                  <?php endforeach;?>
@@ -265,7 +264,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     
                     <dl>
                         <dt><label for="upload">Upload a File:</label></dt>
-                        <dd><input type="file" name="upload" id="upload" /></dd>
+                        <dd><input type="file" name="file" id="upload" /></dd>
                     </dl>
                     
                     <dl>

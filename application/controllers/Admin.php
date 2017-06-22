@@ -28,42 +28,36 @@ class Admin extends CI_Controller{
 
      public function addProduct(){
      
-     	
-     //uploading image
-		$config['upload_path']="assets/images/images";
-		$config['allowed_types']="jpg|gif|png";
-		/*$config['max-width']="250";
-		$config['max_height']="250";*/
-		
-		$this->load->library('upload',$config);
-		$this->upload->do_upload('images');
-		
-		$data=array('upload_data'=>$this->upload->data());
-		
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('item_name', 'Item Name', 'required|trim|max_length[30]');
-		$this->form_validation->set_rules('item_price', 'Item Price', 'required|numeric|trim|max_length[5]');
-		$this->form_validation->set_rules('item_category', 'Category', 'required');
-		$this->form_validation->set_rules('item_desc', 'Item Description', 'required|trim|max_length[500]');
+		$this->form_validation->set_rules('item_name', 'Item Name', 'required|trim|max_length[25]');
+		$this->form_validation->set_rules('item_price', 'Item Price', 'required|numeric|trim|max_length[4]');
+		$this->form_validation->set_rules('category_id', 'Category ID', 'required');
+		$this->form_validation->set_rules('item_desc', 'Item Description', 'required|trim|max_length[100]');
 		
 		if($this->form_validation->run()){
-		$Name=$this->input->post('item_name');
-		$Price=$this->input->post('item_price');
-		$Category=$this->input->post('item_category');
-		$Description=$this->input->post('item_desc');
-		$Status=$this->input->post('item_status');
-		
-		$Image=$data['upload_data']['file_name'];
+			$config['upload_path']="assets/images/images/upload/";
+			$config['allowed_types']='gif|jpg|png';
+				
+			$this->load->library('upload',$config);
+			$this->upload->do_upload('file');
+			
+			$data=array('upload_data'=>$this->upload->data());
+	
+			$Name=$this->input->post('item_name');
+			$Image=$data['upload_data']['file_name'];
+			$Price=$this->input->post('item_price');
+			$Category=$this->input->post('category_id');
+			$Description=$this->input->post('item_desc');
+			$Status=$this->input->post('item_status');
 
-		$this->load->model('Model_Admin');
-		$this->Model_Admin->addProduct($Name,$Price,$Category,$Description,$Status,$Image);
-		
-		$data['insertmsg']="data inserted successfully";
-		$this->load->view('addProduct',$data);
-		
-		} else{
-              	$this->load->view('addProduct');
-         }
+			$this->load->model('Model_Admin');
+			$this->Model_Admin->addProduct
+								($Name,$Price,$Category,$Description,$Status,$Image);
+			 redirect('/Admin/selectCategory/');
+		}else {
+			
+            redirect('/Admin/selectCategory/');
+		}
     }
 
 // to show in the table while 
@@ -108,7 +102,7 @@ class Admin extends CI_Controller{
 		$config['max_height']="250";*/
 		
 		$this->load->library('upload',$config);
-		$this->upload->do_upload('images');
+		$this->upload->do_upload('file');
 		
 		$data=array('upload_data'=>$this->upload->data());
 		

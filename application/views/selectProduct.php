@@ -245,7 +245,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	<td><input type="checkbox" name="" /></td>
             <td><?php echo $row->item_name;?></td>
             <td><?php  echo $row->item_price;?></td>
-            <td><?php  echo $row->item_category;?></td>
+            <td><?php  echo $row->category_id;?></td>
             <td><?php  echo $row->item_desc;?></td>
             <td><?php echo $row->item_status;?></td>
             

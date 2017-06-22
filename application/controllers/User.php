@@ -61,11 +61,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $userID=$this->Model_User->checkLogin($username,$password);
             if($userID){
                 if($userID==1){
-                    $this->load->view('indexAdmin');
+                    $this->session->set_userdata('user_id',$userID);
+                    $this->session->set_userdata('username',$username);
+                    return redirect('Home/admin');
+
                     
                 }else{
                     $this->load->library('session');
                     $this->session->set_userdata('user_id',$userID);
+                    $this->session->set_userdata('username',$username);
+                    /*$this->load->view('dashboard/dashboard');*/
                     return redirect('Home/dashboard');
                 }
             } else {
@@ -80,6 +85,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $data['message']=$this->Model_User->selectUser();
         $this->load->view('viewUser',$data);
        }
+       public function selectCategory(){
+
+   
+        $this->load->model('Model_Admin');
+        $selectCategory=$this->Model_Admin->selectCategory();
+        /* printing to see wether value is passed in array or not print_r($getCategory);*/
+        $this->load->view('dashoard/petMart1',['getCategory'=>$selectCategory]);
+       
+    }
+
+
+      
+         public function findProduct($id){
+        $id=$this->uri->segment(3);
+        
+        $this->load->model('Model_Admin');
+        $data['message']=$this->Model_Admin->findProduct($id);
+        $data['messages']=$this->Model_Admin->selectCategory();
+        $this->load->view('dashboard/petMart1',$data);
+       
+    
+       }
+
+       public function selectImage(){
+        $this->load->model('Model_User');
+        $data['productlist']=$this->Model_User->select();
+        $this->load->view('dashboard/petMart1',$data);
+        
+    }
+
+
+
 
        public function deleteUser(){
         $id=$this->uri->segment(3);

@@ -29,13 +29,13 @@
             <a class="heart" href="#">&nbsp;</a> <a class="twitter" href="#">&nbsp;</a> <a class="facebook" href="#">&nbsp;</a> </div>
           <p>Our Purpose: CityPet Services brings customers and pet sitters together to provide pets with unique individual care from a team of honest, kind, reliable, good people.
 
-			Mission: To connect good people with good people while caring for the animals.
+	     		Mission: To connect good people with good people while caring for the animals.
 
-Vision:To provide professional and compassionate care for pets and their owners. To allow pet owners to feel confident and at ease when they leave their homes and pet family members in our care. This allows the client to be present in their day, whether it is at the office or on vacation. We help pets feel like they are on vacation and allow the humans to be as well.
+         Vision:To provide professional and compassionate care for pets and their owners. To allow pet owners to feel confident and at ease when they leave their homes and pet family members in our care. This allows the client to be present in their day, whether it is at the office or on vacation. We help pets feel like they are on vacation and allow the humans to be as well.
 
-Goals: To keep a life/work balance. Enjoy the animals and stay true to our dreams and ambitions.We love what we do and love the life it provides us.
+         Goals: To keep a life/work balance. Enjoy the animals and stay true to our dreams and ambitions.We love what we do and love the life it provides us.
 
-Customers: We work with good, kind, honest, and all-around awesome people. If this sounds like you, please consider being a Close to Home client. You will fit right in. </p>
+        Customers: We work with good, kind, honest, and all-around awesome people. If this sounds like you, please consider being a Close to Home client. You will fit right in. </p>
         </li>
         <li>
           <div> <span>Nov 29</span>
@@ -43,15 +43,16 @@ Customers: We work with good, kind, honest, and all-around awesome people. If th
             <a class="heart" href="#">&nbsp;</a> <a class="twitter" href="#">&nbsp;</a> <a class="facebook" href="#">&nbsp;</a> </div>
           <p>City is supported by a dedicated staff committed to keeping everything running smoothly for pets and their owners. 
 
-We owe much of our longevity and tremendous success in the pet care business to our "Partners-in-Care" philosophy. This approach blends our strict professional standards of excellence with a soft-hearted and unconditional love for animals, creating a winning combination for clients and their pets. 
+        We owe much of our longevity and tremendous success in the pet care business to our "Partners-in-Care" philosophy. This approach blends our strict professional standards of excellence with a soft-hearted and unconditional love for animals, creating a winning combination for clients and their pets. 
 
-Our employees are skilled professionals who gravitate to this challenging and rewarding profession due to their great love for animals. This love naturally shines through every encounter with our clients' beloved pets.  </p>
+        Our employees are skilled professionals who gravitate to this challenging and rewarding profession due to their great love for animals. This love naturally shines through every encounter with our clients' beloved pets.  </p>
         </li>
         <li>
           <div> <span>Nov 19</span>
             <h2>Sport with you Pet's</h2>
             <a class="heart" href="#">&nbsp;</a> <a class="twitter" href="#">&nbsp;</a> <a class="facebook" href="#">&nbsp;</a> </div>
-          <p> Lorem ipsum sot amet, consec teteur adipis cing elitsed diam non ummy nibh euismod tincidunt ut laoreet dolore magna. Aliquam erat volutpat. ut wisi enim ad veniam, quis nostrud excerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem eum iruire dolor in hendrerit in vulputate vellit essemolestie consequat, velillum dolore eu feugiat nulla facilisis at vero eros et accumsan </p>
+          <p>SportPet Designs makes innovative, fun products for active pets (sleepy, lazy pets, too). Lots of imaginative, caring people work here. But none so  helpful 
+          as our four-legged friends who spend time at the office with us testing all Our Products, from dog food bowls to cat furniture. </p>
         </li>
       </ul>
       <div> <a class="new" href="#">New Post</a> <a class="old" href="#">Old Post</a> </div>
@@ -78,8 +79,8 @@ Our employees are skilled professionals who gravitate to this challenging and re
                   <li><a href="#">January <span>(1)</span></a></li>
                 </ul>
               </li>
-              <li><a href="#">2010 </a></li>
-              <li><a href="#">2009</a></li>
+              <li><a href="#">2016 </a></li>
+              <li><a href="#">2017</a></li>
             </ul>
           </div>
         </div>

@@ -167,7 +167,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="sidebar_box_content">
                 <h3>User help desk</h3>
                 <img src="<?php echo base_url();?>assets/images/images/images/info.png" alt="" title="" class="sidebar_icon_right" />
-                <p>call user 9849234324 to provice support services</p>                
+                <p>call user 9849234324 to provide support services</p>                
                 </div>
                 <div class="sidebar_box_bottom"></div>
             </div>
@@ -218,7 +218,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <h2>Update  Items</h2>
       <div class="form">
          <form action="<?php echo base_url();?>Admin/editProduct" method="post" class="niceform">
-         
                 <fieldset>
                     <input type="hidden" name="hiddenID" value="<?php echo $row->item_id; ?>" > <br>
                     <dl>

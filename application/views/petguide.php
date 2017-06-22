@@ -28,28 +28,51 @@
       </div>
       <ul class="section">
         <li>
-          <h2>Pet Training Guides</h2>
-          <p> Donec a purus sit amet risus consectetur lacinia et ut libero. Vestibulum tempus fauscibus sagittis. Ut gravida lacus eget orci bibendum aliuet. A enean adipiscing congue mi a fringilla. Suspendisse placerat arcu ac est pharetra sit amet pretium ante. </p>
+          <h2>Basic examination</h2>
+          <p> A quick examination of your pet is extremely useful when describing
+              the injuries that your animal may have sustained to your vet or vet nurse.
+              With your own safety in mind, attempt to check the gums (should be
+              pink), breathing (normal/laboured/noisy), assess for pain, ability to
+              walk (lameness) and any discharges present.
+              All this information can quickly pinpoint your animal’s injury or illness
+              and allow the vet to provide you with suitable first aid measures to apply. </p>
         </li>
         <li>
-          <h2>Make them Behave</h2>
-          <p> Ut gravida lacus eget orci bibendum aliuet. A enean adipiscing congue mi a fringilla. Suspendisse placerat arcu ac est pharetra sit amet pretium ante. porta. Duis risus augue, sollicitudin sit amet enim. </p>
+          <h2>Know your pet’s individual heat risk</h2>
+          <p>  
+            We all know our pets are unique - importantly, so is their risk of overheating in the summer. Owners of white cats and dogs, and those that have white ears should be aware that they have a higher chance of burning. Visit Petplan’s website and use our Summer Proof Fun guide to ensure you know how vulnerable your own pet is when temperatures increase.</p>
         </li>
         <li>
-          <h2>Food tht They Need</h2>
-          <p> Donec a purus sit amet risus consectetur lacinia et ut libero. Vestibulum tempus fauscibus sagittis. Ut gravida lacus eget orci bibendum aliuet. A enean adipiscing congue mi a fringilla. Suspendisse placerat arcu ac est pharetra sit amet pretium ante. </p>
+          <h2>How to make them happy</h2>
+          <p> The summer holidays are fast approaching and, while many of us may have already booked our holiday, there will still be some of us searching for last minute deals.
+
+            However, for the dog owners amongst us, deciding whether we want a fortnight relaxing on a beach or a weekend city break is only one of the things we need to think about.
+
+           Petplan takes a look at how you and your dog can have a safe and enjoyable holiday whatever your summer holiday plans…</p>
         </li>
         <li>
-          <h2>Do's and Don'ts</h2>
-          <p> Ut gravida lacus eget orci bibendum aliuet. A enean adipiscing congue mi a fringilla. Suspendisse placerat arcu ac est pharetra sit amet pretium ante. porta. Duis risus augue, sollicitudin sit amet enim. </p>
+          <h2>While buying dogs</h2>
+          <p> There are lots of things to consider if you are buying a new dog. Tiny canines are great companions, and their small size makes them perfect for smaller homes and gardens.
+
+          Small dogs are known for being passionate, inquisitive and quick on their feet.
+
+          Petplan looks at the all the little things you need to consider if you’re thinking of getting a small dog. </p>
         </li>
         <li>
-          <h2>Pet Foods</h2>
-          <p> Donec a purus sit amet risus consectetur lacinia et ut libero. Vestibulum tempus fauscibus sagittis. Ut gravida lacus eget orci bibendum aliuet. A enean adipiscing congue mi a fringilla. Suspendisse placerat arcu ac est pharetra sit amet pretium ante. </p>
+          <h2>Pet Health and Allergies</h2>
+          <p> Many pet owners will be familiar with the particular problems that this time of year can bring – grass and pollen allergies can affect both us and our pets.
+
+          However, many people suffer allergies all year round and, unfortunately, there are thousands of people who are allergic to cats and dogs.
+
+          This can prove problematic for people with pets, regardless of whether it’s them themselves that have allergies or close friends and family who also come into contact with their pets.
+
+          Petplan takes a look at what causes this issue in some people and if there’s anything that can be done to treat it… </p>
         </li>
         <li>
-          <h2>healthy Recipes for Pets</h2>
-          <p> Ut gravida lacus eget orci bibendum aliuet. A enean adipiscing congue mi a fringilla. Suspendisse placerat arcu ac est pharetra sit amet pretium ante. porta. Duis risus augue, sollicitudin sit amet enim. </p>
+          <h2>How to reduce risk of diabetes</h2>
+          <p> One in every 500 dogs and cats develops diabetes, leading to costly daily insulin injections and lifelong monitoring. Yet in many cases, diabetes may be preventable, simply by establishing good feeding habits.
+
+          Diabetes results in excessive levels of glucose (sugar) in the bloodstream and is more common in middle-aged, neutered pets</p>
         </li>
       </ul>
       <div class="paging"> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a class="next" href="#">NEXT</a> </div>
