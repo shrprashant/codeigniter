@@ -170,20 +170,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	<?php echo str_replace('-',' ',ucwords($this->uri->segment(3))); ?>
         </h1>
 
-       <?php foreach ($messages as $row) 
-      {
-      ?> 
+
         <div class="main">
             <div class="content">
                 <div class="content_top">
                     <div class="heading">
-                        <h3><?php echo $row->category_name;?></h3>
-                    <?php
-                }
-                ?>
+                        <h3>Bird  Food</h3>
+                 
                     </div>
                     <div class="see">
-                        <p><a href="#">See all Products</a></p>
+                       
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -194,24 +190,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 ?>
                 <div class="section group">
                     <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="<?php echo base_url();?>assets/images/images/upload/<?php echo $row->item_image ?>" alt="" /></a>
+                        <a href=""><img src="<?php echo base_url();?>assets/images/images/upload/<?php echo $row->item_image ?>" alt="" /></a>
                         <h2><?php  echo $row->item_desc;?> </h2>
                         <div class="price-details">
                             <div class="price-number">
                                 <p><span class="rupees"><?php  echo $row->item_price;?></span></p>
                             </div>
                             <div class="add-cart">								
-                                <h4><a href="<?php echo anchor("dashboard/cartProduct/{$row->item_id}",'item' );?>">Add to Cart</a></h4>
+                                <h4><?php echo anchor("cart/addToCart/{$row->item_id}",'Add to Cart' );?></h4>
                             </div>
                             <div class="clear"></div>
                         </div>
-<?php
+                </div>
+                <?php
 }
 
 ?> 
+    
+    <div class="heading">
+                        <h3>Cat Food</h3>
+                 
                     </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt="" /></a>
+                    <div class="see">
+                       
+                    </div>
+                    <div class="clear"></div>
+                </div>
+               
+                <?php foreach ($message as $row) 
+      
+                {
+                ?> 
+                    
+                <div class="section group" >
+                    <div class="grid_2_of_4 images_1_of_4">
+                        <a href=""><img src="<?php echo base_url();?>assets/images/images/upload/<?php echo $row->item_image ?>" alt="" /></a>
+                        <h2><?php  echo $row->item_desc;?> </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees"><?php  echo $row->item_price;?></span></p>
+                            </div>
+                            <div class="add-cart">                              
+                                <h4><?php echo anchor("cart/addToCart/{$row->item_id}",'Add to Cart' );?></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                </div>
+                <?php
+}
+
+?> 
+                    <div class="grid_2_of_4 images_1_of_4">
+                        <a href=""><img src="images/feature-pic2.jpg" alt="" /></a>
                         <h2>Lorem Ipsum is simply </h2>
                         <div class="price-details">
                             <div class="price-number">
@@ -251,6 +281,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>				     
                     </div>
                 </div>
+
+
                 <div class="content_bottom">
                     <div class="heading">
                         <h3>Feature Products</h3>

@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <head>
-<title>Free Home Shoppe Website Template | Preview :: w3layouts</title>
+<title>City Pet </title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -36,15 +36,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <div class="wrap">
     <div class="header">
         <div class="headertop_desc">
-            <div class="call">
-                 <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
-            </div>
+            
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Checkout</a></li>
+                    <
                     <li><a href="#">My Account</a></li>
                 </ul>
             </div>

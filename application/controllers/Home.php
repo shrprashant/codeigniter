@@ -74,6 +74,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function addPet(){
     		$this->load->view('addPet');
     	}
+        public function editCart(){
+            $this->load->view('dashboard/editCart');
+        }
    }
 
 
