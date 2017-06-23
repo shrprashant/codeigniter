@@ -1,9 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <head>
 <title>City Pet </title>
@@ -63,25 +57,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             DropDown.prototype = {
                 initEvents : function() {
                     var obj = this;
-
                     obj.dd.on('click', function(event){
                         $(this).toggleClass('active');
                         event.stopPropagation();
                     }); 
                 }
             }
-
             $(function() {
-
                 var dd = new DropDown( $('#dd') );
-
                 $(document).click(function() {
                     // all dropdowns
                     $('.wrapper-dropdown-2').removeClass('active');
                 });
-
             });
-
         </script>
      <div class="clear"></div>
   </div>
@@ -349,3 +337,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </body>
 </html>
 
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Priva

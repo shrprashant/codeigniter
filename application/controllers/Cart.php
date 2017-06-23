@@ -8,7 +8,7 @@ class Cart extends CI_Controller{
        public function selectProduct(){
 
         $this->load->model('Model_Cart');
-        $data['message']=$this->Model_Cart->selectProduct();
+        $data['message']=$this->Model_Cart->selectProduct(); 
         $this->load->view('dashboard/petMart1',$data);
        
     }
@@ -20,8 +20,9 @@ class Cart extends CI_Controller{
 		if($sessionData!=''){
 			$this->load->model('Model_Cart');
 			
-			$data['CartMessage']=$this->Model_Cart->addProductInCart
-							($sessionData,$item_id);
+			$this->Model_Cart->addProductInCart($sessionData,$item_id);
+			$this->Model_Cart->getNamePrice($item_id);
+
 			redirect(site_url('Cart/selectProduct'));					
 		} else{
 			$this->load->view('dashboard/dashboard');

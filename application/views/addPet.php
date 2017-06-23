@@ -16,8 +16,7 @@
     <li><a href="<?php echo site_url('Home/blog')?>">Blog</a></li>
     <li><a href="<?php echo site_url('Home/petguide')?>">PetGuide</a></li>
     <li><a href="<?php echo site_url('Home/contact')?>">Contact us</a></li>
-    <li><a href="<?php echo site_url('Home/login')?>">Login</a></li>
-  </ul>
+      </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
 </div>

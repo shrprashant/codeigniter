@@ -125,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          redirect('/User/selectUser/');
        }
 
-public function selectProfile(){
+        public function selectProfile(){
 
          $sessionData=$this->session->userdata('user_id');
         if($sessionData!=''){
@@ -140,22 +140,8 @@ public function selectProfile(){
        }
 }
 
-       // Update Customer Profile
-   /* public function updateProfile(){
-        $sessionData=$this->session->userdata('user_id');
-        //if($sessionData!=''){
-            $this->load->model('Model_User');
-            
-            $profile=$this->Model_User->updateProfile
-                            ($sessionData);
-                
-        $this->load->view('updateProfile',['profile'=>$profile]);
-        //} else{
-          //  $this->load->view('dashboard/dashboard');
-//        }
-    }*/
-    
-    public function updateUserDetails(){
+ 
+        public function updateUserDetails(){
 
         $this->load->library('form_validation');
         

@@ -23,6 +23,24 @@ class Model_Cart extends CI_Model{
 	}
 
 
+	public function getNamePrice($item_id){
+		echo $item_id;
+		$this->db->where("item_id", $item_id);
+			$result=$this->db->get("item");
+			$row=$result->result_array();
+			$price= ($row[0]['item_price']);
+						$item_name= ($row[0]['item_name']);
+
+			echo $price;
+
+			$arr=array(
+			"item_id"=>$item_id,
+			"item_price"=>$price,
+			"item_name"=>$item_name);
+		$this->db->where("item_id",$item_id);
+		$this->db->update('cart',$arr);
+	}
+
 }
 
 ?>
