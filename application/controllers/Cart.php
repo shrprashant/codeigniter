@@ -21,7 +21,7 @@ class Cart extends CI_Controller{
 			$this->load->model('Model_Cart');
 			
 			$data['CartMessage']=$this->Model_Cart->addProductInCart
-							($sessionData,$item_id,$item_name);
+							($sessionData,$item_id);
 			redirect(site_url('Cart/selectProduct'));					
 		} else{
 			$this->load->view('dashboard/dashboard');

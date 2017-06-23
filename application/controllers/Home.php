@@ -34,7 +34,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function signup(){
             $this->load->view('signup');
-        }    
+        }  
+
+         
 
     	public function dashboard(){
     		$this->load->view('dashboard/dashboard');

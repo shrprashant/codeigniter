@@ -125,6 +125,75 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          redirect('/User/selectUser/');
        }
 
+public function selectProfile(){
+
+         $sessionData=$this->session->userdata('user_id');
+        if($sessionData!=''){
+            $this->load->model('Model_User');
+            
+            $data['profile']=$this->Model_User->selectProfile
+                            ($sessionData);
+                
+        $this->load->view('updateProfile',$data);
+        } else{
+           $this->load->view('dashboard/petMart1');
+       }
+}
+
+       // Update Customer Profile
+   /* public function updateProfile(){
+        $sessionData=$this->session->userdata('user_id');
+        //if($sessionData!=''){
+            $this->load->model('Model_User');
+            
+            $profile=$this->Model_User->updateProfile
+                            ($sessionData);
+                
+        $this->load->view('updateProfile',['profile'=>$profile]);
+        //} else{
+          //  $this->load->view('dashboard/dashboard');
+//        }
+    }*/
+    
+    public function updateUserDetails(){
+
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('first_name', 'Firstname', 'required|trim|max_length[50]');
+        $this->form_validation->set_rules('last_name', 'Lastname', 'required|max_length[15]');
+        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('phone_number','Phone Number','required|numeric|exact_length[10]');
+        $this->form_validation->set_rules('address', 'Address', 'required');
+        $this->form_validation->set_rules('email_id','Email','required|trim|valid_email|max_length[40]');
+        if($this->form_validation->run()){
+                     $userID=$this->session->userdata('user_id');
+
+            $firstname=$this->input->post('first_name');
+            $lastname=$this->input->post('last_name');   
+            $username=$this->input->post('username');
+            $phonenumber=$this->input->post('phone_number');
+            $address=$this->input->post('address');
+            $email=$this->input->post('email_id');     
+
+          
+            
+            $this->load->model('Model_User');
+            
+            $data['userMessage']=$this->Model_User->updateUserProfile
+                            ($userID,$firstname,$lastname,$username,$phonenumber,$address,$email);
+                            
+            redirect(site_url('Home/dashboard'));                   
+        } else {
+            echo validation_errors();
+        }
+    }
+    
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('Customer/Login');
+    }
+    
+
     }
 
 ?>

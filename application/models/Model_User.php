@@ -62,6 +62,30 @@ class Model_User extends CI_Model{
         $this->load->view('dashboard/petMart1',$data);
        
     }
+
+    public function selectProfile($sessionData){
+    $this->db->where("user_id",$sessionData);
+		$result=$this->db->get("user");
+		return $result->result();	
+    }
+
+    
+	
+	public function updateUserProfile($userID,$firstname,$lastname,$username,$phonenumber,$address,$email){
+		$array=array(
+			"first_name"=>$firstname,
+			"last_name"=>$lastname,
+			"username"=>$username,
+			"phone_number"=>$phonenumber,
+			"address"=>$address,
+			"email_id"=>$email
+		);
+		$this->db->where("user_id",$userID);
+		$this->db->update('user',$array);
+		return "data updated";
+	}
+
+
 }
 
 ?>
