@@ -3,14 +3,14 @@
 <title>City Pet </title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-<link href="css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all"/>
-<link rel="stylesheet" href="css/global.css">
-<script src="js/slides.min.jquery.js"></script>
+<link href="<?php echo base_url();?>assets/css/petMart.css" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/move-top.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/easing.js"></script>
+<script src="<?php echo base_url();?>assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
+<link href="<?php echo base_url();?>assets/css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" href="<?php echo base_url();?>assets/css/global.css">
+<script src="<?php echo base_url();?>assets/js/slides.min.jquery.js"></script>
 <script>
         $(function(){
             $('#products').slides({
@@ -31,24 +31,20 @@
     <div class="header">
         <div class="headertop_desc">
             
-            <div class="account_desc">
-                <ul>
-                    <
-                    <li><a href="#">My Account</a></li>
-                </ul>
-            </div>
             <div class="clear"></div>
         </div>
         <div class="header_top">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="" /></a>
-            </div>
-              <div class="cart">
-                   <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                    <ul class="dropdown">
-                            <li>you have no items in your Shopping cart</li>
-                    </ul></div></p>
-              </div>
+          
+             <div class="cart">
+                    <p><span>Cart Items:</span>
+                    <div id="dd" class="wrapper-dropdown-2"> 
+                        <ul class="dropdown">
+                            <li><a href="<?php echo site_url('Cart/selectProduct')?>"/>Select Product</a></li>
+                            <li><a  href="<?php echo site_url('Home/Index')?>" />Logout</a>></li>
+                        </ul>
+                    </div>
+                    </p>
+                </div>
               <script type="text/javascript">
             function DropDown(el) {
                 this.dd = el;
@@ -73,33 +69,15 @@
         </script>
      <div class="clear"></div>
   </div>
-    <div class="header_bottom">
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="delivery.html">Delivery</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <div class="clear"></div>
-                </ul>
-            </div>
-            <div class="search_box">
-                <form>
-                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                </form>
-            </div>
-            <div class="clear"></div>
-         </div>         
+            
    </div>
+   <?php
+        foreach($cartProduct as $row){
+      ?>  
+      <form  method="post" action="<?php echo base_url();?>Cart/updateCart">
  <div class="main">
     <div class="content">
-        <div class="content_top">
-            <div class="back-links">
-            <p><a href="index.html">Home</a> >>>> <a href="#">Electronics</a></p>
-            </div>
-            <div class="clear"></div>
-        </div>
+        
         <div class="section group">
                 <div class="cont-desc span_1_of_2">
                   <div class="product-details">             
@@ -108,49 +86,28 @@
                            <div id="products_example">
                                <div id="products">
                                 <div class="slides_container">
-                                    <a href="#" target="_blank"><img src="images/productslide-1.jpg" alt=" " /></a>
-                                    <a href="#" target="_blank"><img src="images/productslide-2.jpg" alt=" " /></a>
-                                    <a href="#" target="_blank"><img src="images/productslide-3.jpg" alt=" " /></a>                 
-                                    <a href="#" target="_blank"><img src="images/productslide-4.jpg" alt=" " /></a>
-                                    <a href="#" target="_blank"><img src="images/productslide-5.jpg" alt=" " /></a>
-                                    <a href="#" target="_blank"><img src="images/productslide-6.jpg" alt=" " /></a>
+                                    <a href="#" target="_blank">
+                                        <img src="<?php echo base_url();?>assets/images/images/upload/<?php echo $row->item_image;?>">
+                                    </a>
+                                    
                                 </div>
-                                <ul class="pagination">
-                                    <li><a href="#"><img src="images/thumbnailslide-1.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-2.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-3.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-4.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-5.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-6.jpg" alt=" " /></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="desc span_3_of_2">
-                    <h2>Lorem Ipsum is simply dummy text </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>                    
+                    <h2><?php  echo $row->item_desc;?> </h2>
+                                     
                     <div class="price">
-                        <p>Price: <span>$500</span></p>
+                        <p>Price: <span><?php  echo $row->item_price;?></span></p>
                     </div>
                     <div class="available">
                         <p>Available Options :</p>
                     <ul>
-                        <li>Color:
-                            <select>
-                            <option>Silver</option>
-                            <option>Black</option>
-                            <option>Dark Black</option>
-                            <option>Red</option>
-                        </select></li>
-                        <li>Size:<select>
-                            <option>Large</option>
-                            <option>Medium</option>
-                            <option>small</option>
-                            <option>Large</option>
-                            <option>small</option>
-                        </select></li>
-                        <li>Quantity:<select>
+                                      <input type="hidden"name="cart_id" value="<?php echo $row->cart_id; ?>">
+
+                        <li>Quantity:<select name="quantity">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -168,20 +125,27 @@
                     <div class="share">
                         <p>Share Product :</p>
                         <ul>
-                            <li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
-                            <li><a href="#"><img src="images/twitter.png" alt="" /></a></li>                        
+                            <li><a href="www.facebook.com"><img src="<?php echo base_url()?>assets/images/images/dashboard/facebook.png" alt="" /></a></li>
+                            <li><?php echo anchor("cart/deleteCart/{$row->cart_id}",'Delete from Cart');?><img src="<?php echo base_url()?>assets/images/images/images/error.png" alt="" </li>                        
                         </ul>
                     </div>
-                    <div class="button"><span><a href="#">Add to Cart</a></span></div>                  
+                     <a>
+                                 </a>
+                    <div class="button">
+                        <span>
+                            
+                            <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button">Update Cart
+                        </button>
+                            
+                        </span>
+                    </div>   
+                    
                     <div class="clear"></div>
                 </div>
-                 <div class="wish-list">
-                    <ul>
-                     <!--    <li class="wish"><a href="#">Add to Wishlist</a></li>
-                        <li class="compare"><a href="#">Add to Compare</a></li> -->
-                    </ul>
-                 </div>
-            </div>
+                      
+         </div>
+
+
             <div class="clear"></div>
           </div>
         <div class="product_desc">  
@@ -193,24 +157,18 @@
                 </ul>
                 <div class="resp-tabs-container">
                     <div class="product-desc">
-                        <p>Lorem Ipsum is simply dummy text of the <span>printing and typesetting industry</span>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span>when an unknown printer took a galley of type and scrambled</span> it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<span> It has survived not only five centuries</span>, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>                   </div>
+                        </p>       </div>
 
                 
 
-                <div class="review">
-                    <h4>Lorem ipsum Review by <a href="#">Finibus Bonorum</a></h4>
-                     <ul>
-                        <li>Price :<a href="#"><img src="images/price-rating.png" alt="" /></a></li>
-                        <li>Value :<a href="#"><img src="images/value-rating.png" alt="" /></a></li>
-                        <li>Quality :<a href="#"><img src="images/quality-rating.png" alt="" /></a></li>
-                     </ul>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                 
-            </div>
+               
          </div>
      </div>
+ </form>
+        <?php
+                        }
+
+                        ?>  
         <script type="text/javascript">
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
@@ -231,7 +189,7 @@
         </div>
    <div class="section group">
                 <div class="grid_1_of_4 images_1_of_4">
-                     <a href="#"><img src="images/new-pic1.jpg" alt=""></a>                 
+                     <a href="#"><img src="<?php echo base_url()?>assets/images/images/upload/feature-pic1.jpg" alt=""></a>                 
                     <div class="price" style="border:none">
                                 <div class="add-cart" style="float:none">                               
                                     <h4><a href="#">Add to Cart</a></h4>
@@ -240,7 +198,7 @@
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="#"><img src="images/new-pic2.jpg" alt=""></a>
+                    <a href="#"><img src="<?php echo base_url()?>assets/images/images/upload/feature-pic2.jpg" alt=""></a>
                      <div class="price" style="border:none">
                                 <div class="add-cart" style="float:none">                               
                                     <h4><a href="#">Add to Cart</a></h4>
@@ -249,7 +207,7 @@
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="#"><img src="images/new-pic4.jpg" alt=""></a>
+                    <a href="#"><img src="<?php echo base_url()?>assets/images/images/upload/feature-pic3.jpg" alt=""></a>
                     <div class="price" style="border:none">
                                 <div class="add-cart" style="float:none">                               
                                     <h4><a href="#">Add to Cart</a></h4>
@@ -258,7 +216,7 @@
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                 <img src="images/new-pic3.jpg" alt="">
+                 <img src="<?php echo base_url()?>assets/images/images/upload/feature-pic4.jpg" alt="">
                      <div class="price" style="border:none">
                                 <div class="add-cart" style="float:none">                               
                                     <h4><a href="#">Add to Cart</a></h4>
@@ -287,40 +245,7 @@
                                 </form>
                             </div>
                     </div>
-                     <div class="community-poll">
-                        <h2>Community POll</h2>
-                        <p>What is the main reason for you to purchase products online?</p>
-                        <div class="poll">
-                            <form>
-                                <ul>
-                                    <li>
-                                    <input type="radio" name="vote" class="radio" value="1">
-                                    <span class="label"><label>More convenient shipping and delivery </label></span>
-                                    </li>
-                                    <li>
-                                    <input type="radio" name="vote" class="radio" value="2">
-                                    <span class="label"><label for="vote_2">Lower price</label></span>
-                                    </li>
-                                    <li>
-                                    <input type="radio" name="vote" class="radio" value="3">
-                                    <span class="label"><label for="vote_3">Bigger choice</label></span>
-                                    </li>
-                                    <li>
-                                    <input type="radio" name="vote" class="radio" value="5">
-                                    <span class="label"><label for="vote_5">Payments security </label></span>
-                                    </li>
-                                    <li>
-                                    <input type="radio" name="vote" class="radio" value="6">
-                                    <span class="label"><label for="vote_6">30-day Money Back Guarantee </label></span>
-                                    </li>
-                                    <li>
-                                    <input type="radio" name="vote" class="radio" value="7">
-                                    <span class="label"><label for="vote_7">Other.</label></span>
-                                    </li>
-                                    </ul>
-                            </form>
-                        </div>
-                     </div>
+                    
                 </div>
         </div>
     </div>
@@ -334,8 +259,8 @@
         });
     </script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+      <div class="copy_right">
+        <p>© City Pet Service </p>
+    </div>
 </body>
 </html>
-
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Priva

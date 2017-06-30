@@ -36,29 +36,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         </ul>
     </div>
+
     <div class="wrap">
         <div class="header">
             <div class="headertop_desc">
-               
-                <div class="account_desc">
-                    <ul>
-
-                        <li><a href="#">My Account</a></li>
+            
+                  <div class="cart">
+                    <p><span>Cart Items:</span>
+                    <div id="dd" class="wrapper-dropdown-2"> 
+                        <ul class="dropdown">
+                            <li><a href="<?php echo base_url('Cart/getCartProduct')?>"/>UPDATE CART</a></li>
+                            <li><a  href="<?php echo site_url('Home/Index')?>" />Logout</a></li>
+                        </ul>
+                    </div>
+                    </p>
+                </div>
+            
+<!-- 
+                        <li><a href="#" id="dd" class="wrapper-dropdown-2" >My Account</a></li> -->
                     </ul>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="header_top">
 
-                <div class="cart">
-                    <p>Welcome to our Online Pet Store! <span>Cart:</span>
-                    <div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                        <ul class="dropdown">
-                            <li>you have no items in your Shopping cart</li>
-                        </ul>
-                    </div>
-                    </p>
-                </div>
+                
                 <script type="text/javascript">
                     function DropDown(el) {
                     this.dd = el;
@@ -91,11 +93,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="header_bottom">
 
-                <div class="search_box">
+
+<!--                  search option for next version
+ -->              <!--   <div class="search_box">
                     <form>
                         <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
                     </form>
-                </div>
+                </div> -->
                 <div class="clear"></div>
             </div>	     
             <div class="header_slide">
@@ -240,115 +244,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 ?> 
-                    <div class="grid_2_of_4 images_1_of_4">
-                        <a href=""><img src="images/feature-pic2.jpg" alt="" /></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic3.jpg" alt="" /></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$599.00</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic4.jpg" alt="" /></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$679.87</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>				     
-                    </div>
-                </div>
+                    
+                 
 
 
-                <div class="content_bottom">
-                    <div class="heading">
-                        <h3>Feature Products</h3>
-                    </div>
-                    <div class="see">
-                        <p><a href="#">See all Products</a></p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="section group">
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/new-pic1.jpg" alt="" /></a>					
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$849.99</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/new-pic2.jpg" alt="" /></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$599.99</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/new-pic4.jpg" alt="" /></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$799.99</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="images/new-pic3.jpg" alt="" /></a>
-                        <h2>Lorem Ipsum is simply </h2>					 
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.99</span></p>
-                            </div>
-                            <div class="add-cart">								
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+               
     <div class="footer">
         <div class="wrap">	
             <div class="section group">
@@ -415,7 +315,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     <div class="copy_right">
-        <p>Company Name © City Pet Service </p>
+        <p>© City Pet Service </p>
     </div>
 </body>
 

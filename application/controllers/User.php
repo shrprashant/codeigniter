@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 if($userID==1){
                     $this->session->set_userdata('user_id',$userID);
                     $this->session->set_userdata('username',$username);
-                    return redirect('Home/admin');
+                    return redirect('Admin/selectOrder');
 
                     
                 }else{
@@ -85,6 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $data['message']=$this->Model_User->selectUser();
         $this->load->view('viewUser',$data);
        }
+
        public function selectCategory(){
 
    

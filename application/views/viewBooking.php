@@ -211,100 +211,92 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <div class="right_content">          
 
-       
+    
+        
+    <h2><strong>Booking'</strong>s Details</h2> 
+                    
+                    
+<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+    <thead>
+    	<tr>
+        	<th scope="col" class="rounded-company"></th>
+            <th scope="col" class="rounded">Booking ID</th>
+            <th scope="col" class="rounded">Pet Name</th>
+            <th scope="col" class="rounded">Service</th>
+            <th scope="col" class="rounded">Day</th>
+            <th scope="col" class="rounded">Date
+            <th scope="col" class="rounded">Time</th>
+           <th scope="col" class="rounded">Session NO
+            <th scope="col" class="rounded">Cost</th>
+            <th scope="col" class="rounded-q4">Delete</th>
+        </tr>
+    </thead>
+        <tfoot>
+    	<tr>
+        	<td colspan="6" class="rounded-foot-left"><em></em></td>
+        	<td class="rounded-foot-right">&nbsp;</td>
+
+        </tr>
+    </tfoot>
+    <tbody>
+    	<tr>
+       <?php
+			foreach($message as $row){
+				?>
+        	<td><input type="checkbox" name="" /></td>
+            <td><?php echo $row->bookingid;?></td>
+            <td><?php  echo $row->petname;?></td>
+            <td><?php  echo $row->service;?></td>
+            <td><?php  echo $row->day;?></td>
+            <td><?php echo $row->date;?></td>
+            <td><?php  echo $row->time;?></td>
+            <td><?php  echo $row->sessionno;?></td>
+            <td><?php  echo $row->cost;?></td>
+            <td> <a href="<?php echo base_url().'Admin/deleteBooking/' . $row->bookingid; ?>"class="ask"> <img src="<?php echo base_url();?>assets/images/images/images/trash.png" alt="delete" title="" border="0" /></a></td>
+  
+          <!-- 
+            <td><a href="#" class="ask"><img src="<?php echo base_url();?>assets/images/images/images/trash.png" alt="delete" title="" border="0" /></a></td> -->
+        </tr>
+        <?php
+			}
+		?>
+    </tbody>
+</table>
+
+	
      
-     <?php foreach ($message as $row) 
-      {
-      ?>   
-    <h2>Update  Items</h2>
-      <div class="form">
-         <form action="<?php echo base_url();?>Admin/editProduct" method="post" class="niceform">
-                <fieldset>
-                    <input type="hidden" name="hiddenID" value="<?php echo $row->item_id; ?>" > <br>
-                    <dl>
-                        <dt>
-                          <label for="Name"><strong>Item Name</strong></label></dt>
-                        <dd><input type="text" value="<?php echo $row->item_name; ?>" name="item_name" id="" size="50" /></dd>
-                    </dl>
-                    <dl>
-                        <dt>
-                          <label for="price"><strong>Price</strong></label></dt>
-                        <dd><input type="text" value="<?php echo $row->item_price; ?>" name="item_price" id="" size="50" /></dd>
-                    </dl>
-                    
-                    
-                    <dl>
-                        <dt><label for="category">Select categories:</label></dt>
-                        <dd>
-                            <select size="1" name="item_category" id="">
-                                <option value="">Select category </option>
-                                    <?php foreach($messages as $category):?>
-                                     <option value=<?php echo $category->category_id?>>
-                                                   <?php echo $category->category_name;?>  
-                                     </option> 
-                                 <?php endforeach;?>
-                            </select>
-                        </dd>
-                    </dl>
-                        
-                     <dl>
-                        &emsp;
-                     </dl>   
-                                              
-                    <dl>
-                        <dt><label for="Status">Item Status</label></dt>
-                        <dd>
-                            <input type="radio" value="available" id="" name="item_status" /><label class="check_label">Available</label>
-                            <input type="radio" value="unavailable" id="" name="item_status" /><label class="check_label">Unavailable</label>
-                            <input type="radio" value="commingsoon" id="" name="item_status" /><label class="check_label">Comming soon</label>
-                      </dl>
-                    
-                    
-                    
-                    <dl>
-                        <dt><label for="upload">Upload a File:</label></dt>
-                        <dd><input type="file" name="upload" id="upload" /></dd>
-                    </dl>
-                    
-                    <dl>
-                        <dt>
-                          <label for="comments">Description</label></dt>
-                        <dd><textarea name="item_desc" value="" id="comments" rows="5" cols="36"><?php echo $row->item_desc; ?></textarea> </dd>
-                    </dl>
-                    
-                     <dl class="submit">
-                    <input type="submit" name="submit" id="submit" value="Submit" />
-                     </dl>
+      <div class="pagination">
+        <span class="disabled"><< prev</span><span class="current">1</span><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>…<a href="">10</a><a href="">11</a><a href="">12</a>...<a href="">100</a><a href="">101</a><a href="">next >></a>
+        </div> 
+        
+     
+     <h2>&nbsp;</h2>
+     <div class="form">
+       <form action="" method="post" class="niceform">
+       <fieldset>
                      
                      
                     
-                </fieldset>
+          </fieldset>
                 
-         </form>
-         </div>  
-           <?php 
-            }
-           ?>
+       </form>
+      </div>  
+      
      
-     </div><!-- end of right content-->
+     </div>
             
                     
-  </div>   <!--end of center content -->               
-                    
-                    
-    
-    
-    <div class="clear"></div>
-    </div> <!--end of main content-->
-    
-    
-    <div class="footer">
-    
-        <div class="left_footer"> ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></div>
-        <div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
-    
+  </div>   
+     
+     <h2>ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></h2>
     </div>
+    </div>
+    </div>
+    <div class="footer">
+      <div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+    
+  </div>
 
-</div>      
+</div>		
 </body>
 </html>

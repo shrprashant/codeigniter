@@ -64,6 +64,19 @@ class Model_Admin extends CI_Model{
 		return "data deleted successfully";
 		
 	}
+
+	public function selectOrder(){
+		$query = $this->db->get('order');
+        return $query-> result();  
+	}
+
+	public function deleteOrder($id){
+		
+		$this->db->where("order_id",$id);
+		$result=$this->db->delete('order');
+		return "data deleted successfully";
+		
+	}
 }
 
 ?>

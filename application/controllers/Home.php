@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('dashboard/contact1');
         }
          public function petservice1(){
-            $this->load->view('dashboard/petservice1');
+            $this->load->view('dashboard/addPet');
         }
         public function petguide1(){
             $this->load->view('dashboard/petguide1');
@@ -76,6 +76,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function addPet(){
     		$this->load->view('addPet');
     	}
+
+
+        public function booking(){
+            $this->load->view('dashboard/booking');
+        }
         public function editCart(){
             $this->load->view('dashboard/editCart');
         }

@@ -51,63 +51,126 @@
    
     
 <div class="regform"&emsp;&emsp;&emsp;>
-	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+  <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    
-               
-               
-  <div class="container">
-			<div class="r">
-				<div class="main-login main-center">
-				<h1>Pet Registration</h1>
-					<form class="form-control" method="post" action="<?php echo base_url();?>Pet/addPet">
-						
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									
-									<input type="text" class="form-control" name="petname" id="name"  placeholder="Enter your Pet Name"/>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="breed" class="cols-sm-2 control-label">Breed </label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="breed" id="breed"  placeholder="Enter pet's breed"/>
-								</div>
-							</div>
-						</div>
-						
-						
-						
+<div class="container">
+      <div class="r">
+        <div class="main-login main-center">
+          <tr>
+             <td><label>* Note 1 session = 60 minutes</label></td>
+             
+                            </tr>
+        <h1>Pet Booking</h1>
+          <form>
+            <?php echo form_open_multipart('Booking/addBooking','class="form-control"'); ?>
+            
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Select Pet Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  
+                 <select class="form-control" name="petname">
+                  <option value="">Select pet name </option>
+                      <?php if(count($getPetName)):?>
+                      <?php foreach($getPetName as $name):?>
+                      <option value='<?php echo $name->petid?>'>
+                      <?php echo $name->petname;?>  
+                   </option> 
+                     <?php endforeach;?>
+                             <?php else:?>
+  
+                             <?php endif;?>
+                </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service" class="cols-sm-2 control-label">Service </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <select class="form-control" name="service">
+                    <option value="">Select Service </option>
+                    <option>walk</option> 
+                    <option>feed </option> 
+                    <option>play</option> 
+                    <option>vetenary </option> 
+                    <option>vaccination </option> 
+                    
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="day" class="cols-sm-2 control-label">Day </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <select class="form-control" name="day">
+                    <option value="">Select Day </option>
+                    <option>Sunday </option> 
+                    <option>Monday </option> 
+                    <option>Tuesday</option> 
+                    <option>Wednesday</option> 
+                    <option>Thursday </option> 
+                    <option>Friday </option> 
+                    <option>Saturday </option> 
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            
+            
 
-						<div class="form-group">
-							<label for="color" class="cols-sm-2 control-label">Color</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="color" id="color"  placeholder="Enter pet's color"/>
-								</div>
-							</div>
-						</div>
+            <div class="form-group">
+              <label for="Date" class="cols-sm-2 control-label">Date</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="date" class="form-control" name="date" id="date"  />
+                </div>
+              </div>
+            </div>
 
-				
-						
-						<div class="form-group ">
-							<button type="submit"  name ='register'id="button" class="btn btn-success btn-lg btn-block login-button">Register
-							</button>
-							<a href="<?php echo site_url('Pet/selectPet')?>">Service booking for Your Pet</a>
-						</div>
-						
-					</form>
-				</div>
-			</div>
-		</div>
-		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+
+           <div class="form-group">
+              <label for="color" class="cols-sm-2 control-label">Time</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="Time" class="form-control" name="time" id="time"  />
+                </div>
+              </div>
+            </div>
+
+           <div class="form-group">
+              <label for="session" class="cols-sm-2 control-label">Session</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="sessionno" id="sessionno"  />
+                </div>
+              </div>
+            </div>
+
+        
+            
+            <div class="form-group ">
+              <button type="submit"  name ='booking'id="button" class="btn btn-success btn-lg btn-block login-button">Submit
+              </button>
+              <a href="<?php echo site_url('Pet/addPet')?>">Add Your Pet</a>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
