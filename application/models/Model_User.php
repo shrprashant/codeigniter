@@ -85,6 +85,24 @@ class Model_User extends CI_Model{
 		return "data updated";
 	}
 
+	public function billGenerate($sessionData){
+	/*	$this->db->select('order.item_price','sum(order.item_price as total)','sum(booking.cost as total)');
+
+
+
+
+*/
+
+		$this->db->select('*','sum(order.cost)');
+		$this->db->from('order');
+		//$this->db->join('user','user.user_id=order.cart_session','inner');
+		$this->db->join('booking','booking.ownerid=order.cart_session','inner');
+		$this->db->where('cart_session',$sessionData);
+		$res=$this->db->get();	
+	
+		return $res->result_array();
+	}
+
 
 }
 

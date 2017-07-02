@@ -60,10 +60,9 @@
           <tr>
              <td><label>* Note 1 session = 60 minutes</label></td>
              
-                            </tr>
+              </tr>
         <h1>Pet Booking</h1>
-          <form>
-            <?php echo form_open_multipart('Booking/addBooking','class="form-control"'); ?>
+            <form class="form-control" method="post" action="<?php echo base_url();?>Booking/addBooking">
             
             <div class="form-group">
               <label for="name" class="cols-sm-2 control-label">Select Pet Name</label>
@@ -75,7 +74,7 @@
                   <option value="">Select pet name </option>
                       <?php if(count($getPetName)):?>
                       <?php foreach($getPetName as $name):?>
-                      <option value='<?php echo $name->petid?>'>
+                      <option value='<?php echo $name->petname;?>'>
                       <?php echo $name->petname;?>  
                    </option> 
                      <?php endforeach;?>
@@ -163,7 +162,7 @@
             <div class="form-group ">
               <button type="submit"  name ='booking'id="button" class="btn btn-success btn-lg btn-block login-button">Submit
               </button>
-              <a href="<?php echo site_url('Pet/addPet')?>">Add Your Pet</a>
+             
             </div>
             
           </form>

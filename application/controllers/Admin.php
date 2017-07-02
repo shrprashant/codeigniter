@@ -176,7 +176,69 @@ class Admin extends CI_Controller {
         redirect('/Admin/selectBooking/');
     }
 
+    public function viewItem(){
+        $sessionData=$this->session->userdata('user_id');
+        if($sessionData!=''){   
+        
+            $this->load->library('pagination');
+            $this->load->model('Model_Admin');
 
+
+            $config['base_url'] = base_url('Admin/selectProduct');
+            
+            $config['per_page'] = ($this->input->get('limitRows')) ? $this->input->get('limitRows') : 10;
+            $config['enable_query_strings'] = TRUE;
+            $config['page_query_string'] = TRUE;
+            $config['reuse_query_string'] = TRUE;
+
+
+             // integrate bootstrap pagination
+            $config['full_tag_open'] = '<ul class="pagination">';
+            $config['full_tag_close'] = '</ul>';
+           
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['prev_link'] = 'Prev';
+            $config['prev_tag_open'] = '<li class="prev">';
+            $config['prev_tag_close'] = '</li>';
+            $config['next_link'] = 'Next';
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a href="'.$config['base_url'].'?per_page=0">';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+
+            $data['page'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
+            $data['searchFor'] = ($this->input->get('query')) ? $this->input->get('query') : NULL;
+            $data['orderField'] = ($this->input->get('orderField')) ? $this->input->get('orderField') : '';
+            $data['orderDirection'] = ($this->input->get('orderDirection')) ? $this->input->get('orderDirection') : '';
+            $data['citylist'] = $this->CustomerModel->getItem($config["per_page"], $data['page'], $data['searchFor'], $data['orderField'], $data['orderDirection']);
+            $config['total_rows'] = $this->CustomerModel->countItem($config["per_page"], $data['page'], $data['searchFor'], $data['orderField'], $data['orderDirection']);
+            $this->pagination->initialize($config);
+            $data['pagination'] = $this->pagination->create_links();
+            $this->load->view('selectProduct', $data);
+        } else{
+            redirect('Admin/selectProduct');
+        }
+    }
+
+public function viewItemDetails($item_id){
+        $sessionData=$this->session->userdata('user_id');
+        if($sessionData!=''){
+            $this->load->model('Model_User');
+            
+            $data['ItemInfo']=$this->CustomerModel->viewItemDetails
+                            ($item_id);
+            // $data['ItemImage']=$this->CustomerModel->viewItemImage
+                            // ($itemID);
+            $this->load->view('selectProduct',$data);
+        } else{
+            $this->load->view('Login');
+        }
+    }
 
 }
 

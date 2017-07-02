@@ -77,6 +77,21 @@ class Model_Admin extends CI_Model{
 		return "data deleted successfully";
 		
 	}
+
+
+
+	public function viewItemDetails($item_id){
+		$query = $this->db->select('*')
+						->from('item')
+						->join('category','category.category_id=item.category_id')
+						->where('item.item_id',$item_id)
+						->get();
+		if($query->num_rows()){
+			return $query->result();
+		} else {
+			return FALSE;
+		}
+	}
 }
 
 ?>

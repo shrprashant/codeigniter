@@ -34,6 +34,7 @@ class Model_Cart extends CI_Model{
 		$query = $this->db->select('*')
 						->from('cart')
 						->join('item','item.item_id=cart.item_id')
+						->where('cart.cart_session',$sessionData)
 						->get();
         return $query->result();
 	}
@@ -62,7 +63,7 @@ class Model_Cart extends CI_Model{
 
 
 	public function getNamePrice($item_id){
-		echo $item_id;
+		
 		$this->db->where("item_id", $item_id);
 			$result=$this->db->get("item");
 			$row=$result->result_array();
@@ -70,13 +71,13 @@ class Model_Cart extends CI_Model{
 			$item_name= ($row[0]['item_name']);
 			/*$item_desc= ($row[0]['item_desc']);*/
 
-			echo $price;
+		
 
 			$arr=array(
 			"item_id"=>$item_id,
 			"item_price"=>$price,
 			"item_name"=>$item_name,
-			"item_desc"=>$item_desc);
+			/*"item_desc"=>$item_desc*/);
 		$this->db->where("item_id",$item_id);
 		$this->db->update('cart',$arr);
 	}

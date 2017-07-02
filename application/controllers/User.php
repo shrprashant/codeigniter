@@ -174,6 +174,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo validation_errors();
         }
     }
+
+    public function billGenerate(){
+
+        $sessionData=$this->session->userdata('user_id');
+        if($sessionData!=''){
+            $this->load->model('Model_User');
+            
+            $data['bill']=$this->Model_User->billGenerate
+                            ($sessionData);
+      
+        $this->load->view('dashboard/payment',$data);
+        } else{
+           $this->load->view('dashboard/petMart1');
+       }
+    }
     
     public function logout(){
         $this->session->sess_destroy();

@@ -62,12 +62,12 @@
           <div class="receipt-header">
           <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="receipt-left">
-              <img class="img-responsive" alt="iamgurdeeposahan" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" style="width: 71px; border-radius: 43px;">
+              <img class="img-responsive" alt="" src="<?php echo base_url()?>assets/images/dog2.jpg" style="width: 71px; border-radius: 43px;">
             </div>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 text-right">
             <div class="receipt-right">
-              <h5>TechiTouch.</h5>
+              <h5>City Pet</h5>
               <p>+977 0949015821 <i class="fa fa-phone"></i></p>
               <p>Citypetservice@gmail.com <i class="fa fa-envelope-o"></i></p>
               <p>Nepal <i class="fa fa-location-arrow"></i></p>
@@ -75,15 +75,14 @@
           </div>
         </div>
             </div>
-      
+   
       <div class="row">
         <div class="receipt-header receipt-header-mid">
           <div class="col-xs-8 col-sm-8 col-md-8 text-left">
             <div class="receipt-right">
-              <h5>Customer Name<small>  |   Lucky Number : 156</small></h5>
-              <p><b>Mobile :</b> customer email</p>
-              <p><b>Email :</b> customer email</p>
-              <p><b>Address :</b> Nepal</p>
+             <!--  <h5>Customer Name<small>  <?php echo $row->first_name;?>  </small></h5> -->
+            <!--   <p><b>Email :</b> <?php echo $row->email_id;?></p>
+              <p><b>Address :</b> Nepal</p> -->
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4">
@@ -103,62 +102,39 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php $total_sum=0;
+                foreach ($bill as $row){
+               
+               ?>
                         <tr>
-                            <td class="col-md-9">Item name</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> item Price-</td>
+                            <td class="col-md-9"><?php echo $row['item_name'];?></td>
+                            <td class="col-md-3"><i class="fa fa-inr"></i> <?php echo $row['cost'];?></td>
                         </tr>
-                        <tr>
-                            <td class="col-md-9">Payment for June 2016</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> 6,00/-</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-9">Payment for May 2016</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> 35,00/-</td>
-                        </tr>
+                       <?php  $total_sum+=$row['cost']; ?>
                         <tr>
                             <td class="text-right">
-                            <p>
-                                <strong>Total Amount: </strong>
-                            </p>
-                            <p>
-                                <strong>Late Fees: </strong>
-                            </p>
-              <p>
-                                <strong>Payable Amount: </strong>
-                            </p>
-              <p>
-                                <strong>Balance Due: </strong>
-                            </p>
-              </td>
-                            <td>
-                            <p>
-                                <strong><i class="fa fa-inr"></i> 65,500/-</strong>
-                            </p>
-                            <p>
-                                <strong><i class="fa fa-inr"></i> 500/-</strong>
-                            </p>
-              <p>
-                                <strong><i class="fa fa-inr"></i> 1300/-</strong>
-                            </p>
-              <p>
-                                <strong><i class="fa fa-inr"></i> 9500/-</strong>
-                            </p>
-              </td>
-                        </tr>
+                           
+           
+                           </td>
+                        </tr>        <?php
+}
+?>
+                 
                         <tr>
                            
                             <td class="text-right"><h2><strong>Total: </strong></h2></td>
-                            <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i> 31.566/-</strong></h2></td>
+                            <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i> <?php echo $total_sum;?></strong></h2></td>
                         </tr>
-                    </tbody>
+                   </tbody>
                 </table>
+        
             </div>
       
       <div class="row">
         <div class="receipt-header receipt-header-mid receipt-footer">
           <div class="col-xs-8 col-sm-8 col-md-8 text-left">
             <div class="receipt-right">
-              <p><b>Date :</b> 15 Aug 2016</p>
+              <p></p>
               <h5 style="color: rgb(140, 140, 140);">Thank you for your business!</h5>
             </div>
           </div>
@@ -169,37 +145,13 @@
           </div>
         </div>
             </div>
-      
+     
         </div>    
   </div>
 </div>
  
 </div>
 
-<div id="footer">
-  <div class="section">
-    <ul>
-      <li> <img src="<?php echo base_url();?>assets/images/friendly-pets.jpg" width="240" height="186" alt="">
-        <h2><a href="#">Friendly Pets</a></h2>
-        <p> Pets are our best friend. they gives us company. they never betray us.<a class="more" href="#"></a> </p>
-      </li>
-      <li> <img src="<?php echo base_url();?>assets/images/pet-lover2.jpg" width="240" height="186" alt="">
-        <h2><a href="#">How dangerous are they</a></h2>
-        <p> They are not dangerous if we love and care them. sometime they may be aggressive. <a class="more" href="#"></a> </p>
-      </li>
-      <li> <img src="<?php echo base_url();?>assets/images/healthy-dog.jpg" width="240" height="186" alt="">
-        <h2><a href="#">Keep them healthy</a></h2>
-        <p> Good food with regular diet plan makes them healthy. <a class="more" href="#"></a> </p>
-      </li>
-      <li>
-        <h2><a href="#">Love...love...love...pets</a></h2>
-        <p> As we love them they are always loyal to us. So we should care them <a class="more" href="#"></a> </p>
-        <img src="<?php echo base_url();?>assets/images/pet-lover.jpg" width="240" height="186" alt=""> </li>
-    </ul>
-  </div>
-  <div id="footnote">
-    <div class="section">Copyright &copy; 2017 <a href="#">City Pet Service</a> All rights reserved <a target="_blank" href="http://www.facebook.com/citypetservice/">www.facebook.com/citypetservice</a></div>
-  </div>
-</div>
+
 </body>
 </html>

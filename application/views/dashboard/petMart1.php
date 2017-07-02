@@ -46,6 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div id="dd" class="wrapper-dropdown-2"> 
                         <ul class="dropdown">
                             <li><a href="<?php echo base_url('Cart/getCartProduct')?>"/>UPDATE CART</a></li>
+                              <li><a  href="<?php echo site_url('User/billGenerate')?>" />Payment status</a></li>
                             <li><a  href="<?php echo site_url('Home/Index')?>" />Logout</a></li>
                         </ul>
                     </div>
@@ -274,13 +275,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col_1_of_4 span_1_of_4">
                     <h4>My account</h4>
-                    <ul>
-                        <li><a href="contact.html">Sign In</a></li>
-                        <li><a href="index.html">View Cart</a></li>
-                        <li><a href="#">My Wishlist</a></li>
-                        <li><a href="#">Track My Order</a></li>
-                        <li><a href="contact.html">Help</a></li>
-                    </ul>
+                    
                 </div>
                 <div class="col_1_of_4 span_1_of_4">
                     <h4>Contact</h4>

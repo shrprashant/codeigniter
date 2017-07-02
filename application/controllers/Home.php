@@ -84,6 +84,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function editCart(){
             $this->load->view('dashboard/editCart');
         }
+        public function payment(){
+            $this->load->view('dashboard/payment');
+        }
    }
 
 
