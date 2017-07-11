@@ -49,6 +49,38 @@
           </li>
         </ul>
       </div>
+      <div id="content">
+    <div class="content">
+      <h2>Contact us</h2>
+      <div>
+        <p> This is a complete web based system to provide an excellent service regarding pets. As the pets are our family members we need to care about them. This system is a complete solution for the pets. The address can be located with google map, which make it easy to fine the pet service.  User can register themselves and buy pet food and Accessories. In addition to this user can register their pets and book the services for pet. This website will help user to purchase pet foods in day to day life. </p>
+      </div>
+      <ul class="connect">
+        <li>
+          <h2>Customer Sales and Serevice</h2>
+          <p> <span>E-mail: <a href="#">citypetservice@gmail.com</a></span> <span>Call or e-mail us for help with any aspect of your purchase, online or offline.</span> </p>
+          <p> <span> call +977-9849015821</span> <span>Call +9823108477</span> </p>
+        </li>
+        <li>
+          <h2>Store Hours</h2>
+          <p> <span>sunday to saturday 9:00 am - 7:00 pm EST (GMT +05:45)</span> <span>Closed on public holidays</span> </p>
+        </li>
+        <li>
+          <h2>Mailing Address</h2>
+          <p> <span>Petshop</span> <span>Baghbazar </span> <span>4th Floor</span> <span>Yeti plaza</span> <span>Kathmandu</span> </p>
+        </li>
+      </ul>
+    </div>
+    <div id="sidebar">
+      <div class="connect">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a class="facebook" href="https://www.facebook.com/citypetservice">Facebook</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
     </div>
     <div id="sidebar">
       <div class="featured">

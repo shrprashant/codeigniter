@@ -10,7 +10,7 @@
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
    <ul class="navigation">
- <li class="active"><a href="<?php echo site_url('Home/dashboard')?>  value="PLAY"  onclick="play()">Home</a></li><li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/dashboard')?>"  value="PLAY"  onclick="play()">Home</a></li><li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
     <li><a href="<?php echo site_url('Home/petservice1')?>"  value="PLAY"  onclick="play()">PetService</a></li>
     <li><a href="<?php echo site_url('Home/petguide1')?>"  value="PLAY"  onclick="play()">PetGuide</a></li>
      <li><a href="<?php echo site_url('Home/about1')?>"  value="PLAY"  onclick="play()">About us</a></li>
@@ -23,7 +23,7 @@
     <div class="content">
       <h2>Contact us</h2>
       <div>
-        <p> This website template has been designed by free website templates for you, free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the forum </p>
+        <p> This is a complete web based system to provide an excellent service regarding pets. As the pets are our family members we need to care about them. This system is a complete solution for the pets. The address can be located with google map, which make it easy to fine the pet service.  User can register themselves and buy pet food and Accessories. In addition to this user can register their pets and book the services for pet. This website will help user to purchase pet foods in day to day life. </p>
       </div>
       <ul class="connect">
         <li>
@@ -79,7 +79,15 @@
         <p> As we love them they are always loyal to us. So we should care them <a class="more" href="#">Read More</a> </p>
         <img src="<?php echo base_url();?>assets/images/pet-lover.jpg" width="240" height="186" alt=""> </li>
     </ul>
+     <section id="map" class="">
+    <div class="mapwrapper">
+      <div id="map" class="container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2803.2787262257525!2d85.36036896489752!3d27.720083794784767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bdaf1ce2119%3A0x77cb4b8899b3981a!2sPets+Home+Pvt.+Ltd!5e0!3m2!1sen!2snp!4v1499524457501" width="1100" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></iframe>
+    </div> 
   </div>
+</section>
+  </div>
+ 
   <div id="footnote">
     <div class="section">Copyright &copy; 2017 <a href="#">City Pet Service</a> All rights reserved <a target="_blank" href="http://www.facebook.com/citypetservice/">www.facebook.com/citypetservice</a></div>
   </div>

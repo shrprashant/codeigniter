@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
   <ul class="navigation">
- <li class="active"><a href="<?php echo site_url('Home/dashboard')?>  value="PLAY"  onclick="play()">Home</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/dashboard')?>"  value="PLAY"  onclick="play()">Home</a></li>
     <li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
     <li><a href="<?php echo site_url('Home/petservice1')?>"  value="PLAY"  onclick="play()">PetService</a></li>
     <li><a href="<?php echo site_url('Home/petguide1')?>"  value="PLAY"  onclick="play()">PetGuide</a></li>

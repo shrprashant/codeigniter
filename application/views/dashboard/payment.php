@@ -11,7 +11,7 @@
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
   <ul class="navigation">
  <<ul class="navigation">
- <li class="active"><a href="<?php echo site_url('Home/dashboard')?>  value="PLAY"  onclick="play()">Home</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/dashboard')?> " value="PLAY"  onclick="play()">Home</a></li>
     <li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
     <li><a href="<?php echo site_url('Home/petservice1')?>"  value="PLAY"  onclick="play()">PetService</a></li>
     <li><a href="<?php echo site_url('Home/petguide1')?>"  value="PLAY"  onclick="play()">PetGuide</a></li>
@@ -48,7 +48,10 @@
     <link href='<?php echo base_url();?>assets/css/googefonts.css' rel='stylesheet' type='text/css'>
         <link href='<?php echo base_url();?>assets/css/payment.css' rel='stylesheet' type='text/css'>
    
-    
+    <script>function Print(){
+      window.print()
+    }
+     </script>
 <div class="regform"&emsp;&emsp;&emsp;>
 	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
@@ -71,6 +74,7 @@
               <p>+977 0949015821 <i class="fa fa-phone"></i></p>
               <p>Citypetservice@gmail.com <i class="fa fa-envelope-o"></i></p>
               <p>Nepal <i class="fa fa-location-arrow"></i></p>
+               <button class="btn btn-danger" onclick="Print()" >Print<button>
             </div>
           </div>
         </div>
@@ -141,6 +145,7 @@
           <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="receipt-left">
               <h1>Signature</h1>
+              
             </div>
           </div>
         </div>

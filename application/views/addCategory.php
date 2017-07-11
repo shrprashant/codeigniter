@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="header">
                 <div class="logo"><a href="#"><img src="<?php echo base_url(); ?>assets/images/images/images/logo.gif" alt="" title="" border="0" /></a></div>
 
-                <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages"> UserGuide</a> | <a href="<?php echo site_url('Home/index') ?>" class="logout">Logout</a></div>
+                <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="<?php echo base_url();?>assets/adminguide.pdf" class="messages"> UserGuide</a> | <a href="<?php echo site_url('Home/index') ?>" class="logout">Logout</a></div>
                 <div class="jclock"></div>
             </div>
 
@@ -152,7 +152,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                 </ul>
                             </div>
-                            <a class="menuitem" href="<?php echo site_url('Admin/selectOrder'); ?>">Items Booked</a>
+                            <a class="menuitem" href="<?php echo site_url('Admin/selectOrder'); ?>">Ordered Items </a>
 
                             <a class="menuitem_green" href="<?php echo site_url('Admin/selectBooking'); ?>">Services Booking</a>
 
@@ -166,7 +166,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="sidebar_box_content">
                                 <h3>User help desk</h3>
                                 <img src="<?php echo base_url(); ?>assets/images/images/images/info.png" alt="" title="" class="sidebar_icon_right" />
-                                <p>call user 9849234324 to provide support services</p>                
+                                <p>call user 9849234324 to provide support services</p>
+                                <p> <a href="<?php echo base_url();?>assets/adminguide.pdf"> Click Here for User Guide</a>   </p>                  
                             </div>
                             <div class="sidebar_box_bottom"></div>
                         </div>
@@ -213,7 +214,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
  
-     
+      <?php if ($this->session->flashdata('msg')) {?>
+     <script>
+      Notify(<?=$this->session->flashdata('msg')?>, null, null, type);
+     </script>
+    <?php } ?>
      
            
      <h2>Add New Category</h2>

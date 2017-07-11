@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 if($this->input->post('password')!='' || $this->input->post('repassword')!='')
                     {
                         $this->form_validation->set_rules('password','Password', 'trim|required|min_length[6]|max_length[20]|matches[repassword]'); 
-                        $this->form_validation->set_rules('repassword', 'Confirm Password', 'trim|required|min_length[6]|max_length[20]');
+                        $this->form_validation->set_rules('repassword', 'Confirm Password', 'trim|required');
                     }
 
                 $this->form_validation->set_rules('phone_number','Phone Number','required|numeric|exact_length[10]');
@@ -43,42 +43,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 
                     $this->load->view('login');
         
-
+                     $this->session->set_flashdata('msg','Registration Successful Please login');
                  } else{
-                    echo validation_errors();
+                    $this->load->view('signup');
+                    
                  } 
 
             
 		}
     
-        public function login(){ 
-        
+        public function login(){  
+            //getting value from form
             $username=$this->input->post('username');
             $password=md5($this->input->post('password'));
-            
+            // loading the model
             $this->load->model('Model_User');
-            
+            // sending the value of username and password to model via $userID variable
             $userID=$this->Model_User->checkLogin($username,$password);
             if($userID){
+                //checking condition for admin with session start
                 if($userID==1){
                     $this->session->set_userdata('user_id',$userID);
                     $this->session->set_userdata('username',$username);
                     return redirect('Admin/selectOrder');
-
-                    
+         
                 }else{
+                    //checking condition for user with session start
                     $this->load->library('session');
                     $this->session->set_userdata('user_id',$userID);
                     $this->session->set_userdata('username',$username);
-                    /*$this->load->view('dashboard/dashboard');*/
+                    // redricting to dashboard if login successful
                     return redirect('Home/dashboard');
                 }
             } else {
-                echo ("Password not match");
+                // print message if login fails
+                echo "<script>alert('Login Failed');
+                window.location.href='login'; </script>";
+
             }
-    
         }
 
+   
 
        public function selectUser(){
         $this->load->model('Model_User');
@@ -192,7 +197,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     public function logout(){
         $this->session->sess_destroy();
-        redirect('Customer/Login');
+        redirect('Home/index');
     }
     
 

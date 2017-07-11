@@ -41,7 +41,7 @@ class Cart extends CI_Controller {
     public function updateCart() {
         $quantity = $this->input->post('quantity');
         $cart_id = $this->input->post('cart_id');
-   
+
         $this->load->model('Model_Cart');
         $check = $this->Model_Cart->updateProductInCart($cart_id, $quantity);
         if ($check) {

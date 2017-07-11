@@ -3,12 +3,16 @@
 class Model_Cart extends CI_Model{
 
 	public function selectProduct(){
-		$query = $this->db->get('item');
-        return $query-> result();  
+		/*$query = $this->db->get('item');
+        return $query-> result();  */
+        $query = $this->db->select('*')
+						->from('category')
+						->join('item','item.category_id=category.category_id')
+						/*->where('item.cart_session',$sessionData)*/
+						->get();
+        return $query->result();
 	}
 
-
-	
 
 	// Add Items To Cart
 	public function addProductInCart($sessionData,$item_id){
@@ -27,10 +31,7 @@ class Model_Cart extends CI_Model{
 	}
 
 		public function getCartProduct($sessionData){
-		/*$this->db->where("cart_session",$sessionData);
-		$this->db->order_by("cart_id");
-		$result=$this->db->get("cart");
-		return $result->result();*/
+		
 		$query = $this->db->select('*')
 						->from('cart')
 						->join('item','item.item_id=cart.item_id')

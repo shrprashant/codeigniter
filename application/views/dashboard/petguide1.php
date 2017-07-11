@@ -17,7 +17,7 @@
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
    <ul class="navigation">
- <li class="active"><a href="<?php echo site_url('Home/dashboard')?>  value="PLAY"  onclick="play()">Home</a></li><li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/dashboard')?>"  value="PLAY"  onclick="play()">Home</a></li><li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
     <li><a href="<?php echo site_url('Home/petservice1')?>"  value="PLAY"  onclick="play()">PetService</a></li>
     <li><a href="<?php echo site_url('Home/petguide1')?>"  value="PLAY"  onclick="play()">PetGuide</a></li>
      <li><a href="<?php echo site_url('Home/about1')?>"  value="PLAY"  onclick="play()">About us</a></li>
@@ -29,6 +29,7 @@
   <div id="content">
     <div class="content">
       <h2>Pet Guide</h2>
+      <a href="<?php echo base_url();?>assets/userguide.pdf"> Click Here for User Guide</a>
       <div>
         <p> Here are some useful pet quide tips for your pets. Easy and convenient for you to learn more on how to understand them. basic intructions to useful information not just for your pet but also for other animals. </p>
       </div>

@@ -37,7 +37,7 @@ class Admin extends CI_Controller {
             $config['allowed_types'] = 'gif|jpg|png';
 
             $this->load->library('upload', $config);
-            $this->upload->do_upload('file');
+            $this->upload->do_upload('item_image');
 
             $data = array('upload_data' => $this->upload->data());
 
@@ -53,8 +53,8 @@ class Admin extends CI_Controller {
                     ($Name, $Price, $Category, $Description, $Status, $Image);
             redirect('/Admin/selectCategory/');
         } else {
-
-            redirect('/Admin/selectCategory/');
+echo error;
+           /* redirect('/Admin/selectCategory/');*/
         }
     }
 

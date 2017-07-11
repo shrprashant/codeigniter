@@ -53,11 +53,17 @@
 	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    
-               
+      <?php if ($this->session->flashdata('msg')) {?>
+     <script>
+      Notify(<?=$this->session->flashdata('msg')?>, null, null, type);
+     </script>
+      <?php } ?>         
   <div class="container">
 			<div class="row main">
 				<div class="main-login main-center">
+
 				<h1>Login</h1>
+      
 					<form class="form-control" method="post" action="<?php echo base_url();?>User/login">
 					
 
@@ -80,13 +86,15 @@
 								</div>
 							</div>
 						</div>
-		<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+	         	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+
   							<input type="checkbox" name="interests[]" id="" value="" /><label class="check_label">Remember me</label>
 				
 					
 						<div class="form-group ">
 							<button href="#" type="submit" name="login" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>
 							<a href="<?php echo site_url('Home/signup')?>"> Register here</a>
+              <div><a href="#"> Forget Password</a></div>
 						</div>
 						
 					</form>

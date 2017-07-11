@@ -23,6 +23,7 @@
   <div id="content">
     <div class="content">
       <h2>Pet Guide</h2>
+       <a href="<?php echo base_url();?>assets/userguide.pdf"> Click Here for User Guide</a>
       <div>
         <p> Here are some useful pet quide tips for your pets. Easy and convenient for you to learn more on how to understand them. basic intructions to useful information not just for your pet but also for other animals. </p>
       </div>

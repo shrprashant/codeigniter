@@ -57,10 +57,13 @@
 <div class="regform"&emsp;&emsp;&emsp;>
 	<div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
    
- 
+
   <div class="container">
+
+
 			<div class="r">
 				<div class="main-login main-center">
+					<?php echo validation_errors(); ?>
 				<h1>Registration</h1>
 					<form class="form-control" method="post" action="<?php echo base_url();?>User/register">
 						

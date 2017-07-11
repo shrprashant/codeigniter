@@ -19,16 +19,15 @@ class Model_User extends CI_Model{
 	return "Data saved successfully";
 	}
 
+	// Check login function for checking username and password
+
 	public function checkLogin($username,$password){
 	$query=$this->db->where(['username'=>$username,'password'=>$password])->get ("user");
 	if($query->num_rows()){
 		return $query->row()->user_id;
-	/*
-			$this->session->set_userdata($sess_array);*/
-			 echo $query;	
-       		 echo "get login:";				
+	  					
 		}else {
-			echo "not login";
+			return false;
 			}	
 	}
 
@@ -86,12 +85,7 @@ class Model_User extends CI_Model{
 	}
 
 	public function billGenerate($sessionData){
-	/*	$this->db->select('order.item_price','sum(order.item_price as total)','sum(booking.cost as total)');
 
-
-
-
-*/
 
 		$this->db->select('*','sum(order.cost)');
 		$this->db->from('order');

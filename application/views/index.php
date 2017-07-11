@@ -8,8 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>assets/css/ie7.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>assets/css/ie6.css" rel="stylesheet" type="text/css">
-<!--[if IE 6]><link href="css/ie6.css" rel="stylesheet" type="text/css"><![endif]-->
-<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+<!-- <?php echo $map['js']; ?> -->
 </head>
 <body>
 <div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
@@ -80,6 +80,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
     </div>
+    <section id="map" class="">
+    <div class="mapwrapper">
+      <div id="map" class="container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2803.2787262257525!2d85.36036896489752!3d27.720083794784767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bdaf1ce2119%3A0x77cb4b8899b3981a!2sPets+Home+Pvt.+Ltd!5e0!3m2!1sen!2snp!4v1499524457501" width="1100" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></iframe>
+    </div> 
+  </div>
+</section>
   </div>
   <div class="featured">
     <ul>
@@ -109,7 +116,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p> As we love them they are always loyal to us. So we should care them <a class="more" href="#">Read More</a> </p>
         <img src="<?php echo base_url();?>assets/images/pet-lover.jpg" width="240" height="186" alt=""> </li>
     </ul>
+    
   </div>
+  <div>
+<!-- <?php echo $map['html']; ?> -->
+
+  </div>  
   <div id="footnote">
     <div class="section">Copyright &copy; 2017 <a href="#">City Pet Service</a> All rights reserved <a target="_blank" href="http://www.facebook.com/citypetservice/">www.facebook.com/citypetservice</a></div>
   </div>

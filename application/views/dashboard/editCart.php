@@ -73,14 +73,15 @@
             </div>
 
         </div>
-        <?php
-        foreach ($cartProduct as $row) {
-            ?>  
-            <form  method="post" action="<?php echo base_url(); ?>Cart/updateCart">
+         
+        
                 <div class="main">
                     <div class="content">
-
-                        <div class="section group">
+       <div class="section group">
+        <?php
+        foreach ($cartProduct as $row) {
+            ?> 
+                     <form  method="post" action="<?php echo base_url(); ?>Cart/updateCart">
                             <div class="cont-desc span_1_of_2">
                                 <div class="product-details">             
                                     <div class="grid images_3_of_2">
@@ -104,23 +105,28 @@
                                         <div class="price">
                                             <p>Price: <span><?php echo $row->item_price; ?></span></p>
                                         </div>
+                                        <div>
+                                        <input type="hidden" name="cart_id" value="<?php echo $row->cart_id; ?>"> </div>
                                         <div class="available">
                                             <p>Available Options :</p>
                                             <ul>
-                                                <input type="hidden"name="cart_id" value="<?php echo $row->cart_id; ?>">
+                                                
 
-                                                <li>Quantity:<select name="quantity">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                        <option>6</option>
-                                                        <option>7</option>
-                                                        <option>8</option>
-                                                        <option>9</option>
-                                                        <option>10</option>
-                                                    </select></li>
+                                                <li>Quantity:
+                                                    <select name="quantity">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                       
+                                                    </select>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="share-desc">
@@ -128,7 +134,7 @@
                                                 <p>Share Product :</p>
                                                 <ul>
                                                     <li><a href="www.facebook.com"><img src="<?php echo base_url() ?>assets/images/images/dashboard/facebook.png" alt="" /></a></li>
-                                                    <li><?php echo anchor("cart/deleteCart/{$row->cart_id}", 'Delete from Cart'); ?><img src="<?php echo base_url() ?>assets/images/images/images/error.png" alt="" </li>                        
+                                                    <li><?php echo anchor("cart/deleteCart/{$row->cart_id}", 'Delete from Cart'); ?><img src="<?php echo base_url() ?>assets/images/images/images/error.png" /> </li>                        
                                                 </ul>
                                             </div>
                                             <a>
@@ -141,14 +147,14 @@
 
                                                
                                             </span>   
-
-                                            <div class="clear"></div>
+<!-- 
+                                            <div class="clear"></div> -->
                                         </div>
 
                                     </div>
 
-
-                                    <div class="clear"></div>
+<!-- 
+                                    <div class="clear"></div> -->
                                 </div>
                                 <div class="product_desc">  
                                     <div id="horizontalTab">
@@ -172,6 +178,9 @@
                                 <?php
                             }
                             ?>  
+
+
+
                             <script type="text/javascript">
                                 $(document).ready(function () {
                                     $('#horizontalTab').easyResponsiveTabs({
@@ -229,7 +238,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="rightsidebar span_3_of_1">
+                        <!-- <div class="rightsidebar span_3_of_1">
                             <h2>CATEGORIES</h2>
                             <ul>
                                 <li><a href="#">Dog Food</a></li>
@@ -237,9 +246,9 @@
                                 <li><a href="#">Bird Food</a></li>
                                 <li><a href="#">Fish Food</a></li>
                                 <li><a href="#">Accessories</a></li>
-
+                        
                             </ul>
-    <!-- subscription futur work  <div class="subscribe">
+                            subscription futur work  <div class="subscribe">
                                 <h2>Newsletters Signup</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.......</p>
                                 <div class="signup">
@@ -247,9 +256,9 @@
                                         <input type="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';"><input type="submit" value="Sign up">
                                     </form>
                                 </div>
-                            </div> -->
-
-                        </div>
+                            </div>
+                        
+                        </div> -->
                     </div>
                 </div>
             </div>
