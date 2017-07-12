@@ -294,7 +294,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     </div>
     <div class="footer">
-      <div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+      <div class="right_footer"><alt="" title="" border="0" /></a></div>
     
   </div>
 

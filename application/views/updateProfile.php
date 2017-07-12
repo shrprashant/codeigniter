@@ -8,7 +8,7 @@
 <link href="css/ie7.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
+<div id="header"> <a href="<?php echo site_url('Home/dashboard')?>" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
  <ul class="navigation">
  <li class="active"><a href="<?php echo site_url('Home/index')?>">Home</a></li>
     <li><a href="<?php echo site_url('Home/petmart')?>">PetMart</a></li>

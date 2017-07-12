@@ -8,18 +8,18 @@
 <!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
 </head>
 <body>
-<div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
+ <div id="header"> <a href="<?php echo site_url('Home/dashboard')?> " id="logo"><img src="<?php echo base_url();?>assets/images/logo1.png" width="310" height="114" alt=""></a>
   <ul class="navigation">
- <<ul class="navigation">
- <li class="active"><a href="<?php echo site_url('Home/dashboard')?> " value="PLAY"  onclick="play()">Home</a></li>
+ <li class="active"><a href="<?php echo site_url('Home/dashboard')?>" value="PLAY"  onclick="play()">Home</a></li>
     <li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
     <li><a href="<?php echo site_url('Home/petservice1')?>"  value="PLAY"  onclick="play()">PetService</a></li>
     <li><a href="<?php echo site_url('Home/petguide1')?>"  value="PLAY"  onclick="play()">PetGuide</a></li>
      <li><a href="<?php echo site_url('Home/about1')?>"  value="PLAY"  onclick="play()">About us</a></li>
     <li><a href="<?php echo site_url('Home/contact1')?>"  value="PLAY"  onclick="play()">Contact us</a></li>
-    <li><a href="<?php echo site_url('User/Logout')?>"  value="PLAY"  onclick="play()"> Logout
-</div>
+    <li><a href="<?php echo site_url('User/selectProfile')?>"  value="PLAY"  onclick="play()"> Update info</a></li>
 
+  </ul>
+</div>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,11 +70,12 @@
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 text-right">
             <div class="receipt-right">
-              <h5>City Pet</h5>
+              <h5>City Pet Service</h5>
               <p>+977 0949015821 <i class="fa fa-phone"></i></p>
               <p>Citypetservice@gmail.com <i class="fa fa-envelope-o"></i></p>
               <p>Nepal <i class="fa fa-location-arrow"></i></p>
-               <button class="btn btn-danger" onclick="Print()" >Print<button>
+               <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+                <button class="btn btn-danger" onclick="Print()"> Print </button>
             </div>
           </div>
         </div>
@@ -84,9 +85,7 @@
         <div class="receipt-header receipt-header-mid">
           <div class="col-xs-8 col-sm-8 col-md-8 text-left">
             <div class="receipt-right">
-             <!--  <h5>Customer Name<small>  <?php echo $row->first_name;?>  </small></h5> -->
-            <!--   <p><b>Email :</b> <?php echo $row->email_id;?></p>
-              <p><b>Address :</b> Nepal</p> -->
+             
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4">
@@ -102,19 +101,27 @@
                     <thead>
                         <tr>
                             <th>Description</th>
+                            <th>Quanitity</th>
                             <th>Amount</th>
                         </tr>
                     </thead>
                     <tbody>
                       <?php $total_sum=0;
                 foreach ($bill as $row){
+                 $itemprice=$row['cost'];
+                 $quantity=$row['quantity'];
+                 $totalcost=$itemprice * $quantity;
+                 $total_sum+=$totalcost;
+
                
                ?>
                         <tr>
                             <td class="col-md-9"><?php echo $row['item_name'];?></td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> <?php echo $row['cost'];?></td>
-                        </tr>
-                       <?php  $total_sum+=$row['cost']; ?>
+                            <td class="col-md-9"><?php echo $row['quantity'];?></td>
+                            <td class="col-md-3"><i class="fa fa-inr"></i> <?php echo $totalcost;?></td>
+                        </tr>   
+                        
+                        <!-- Returning value from array -->
                         <tr>
                             <td class="text-right">
                            

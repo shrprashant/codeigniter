@@ -264,7 +264,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="footer">
     
     	<div class="left_footer"> ADMIN PANEL <a href="https://www.facebook.com/citypetservice">City Pet Service</a></div>
-    	<div class="right_footer"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+    	<div class="right_footer"><alt="" title="" border="0" /></a>
+        </div>
     
     </div>
 

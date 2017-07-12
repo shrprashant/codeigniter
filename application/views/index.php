@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- <?php echo $map['js']; ?> -->
 </head>
 <body>
-<div id="header"> <a href="#" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
+<div id="header"> <a href="<?php echo site_url('Home/index')?>" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
   <ul class="navigation">
  <li class="active"><a href="<?php echo site_url('Home/index')?>">Home</a></li>
     <li><a href="<?php echo site_url('Home/petmart')?>">PetMart</a></li>

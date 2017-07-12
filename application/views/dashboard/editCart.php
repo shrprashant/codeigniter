@@ -1,17 +1,25 @@
-<!DOCTYPE HTML>
-<head>
-    <title>City Pet </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="<?php echo base_url(); ?>assets/css/petMart.css" rel="stylesheet" type="text/css" media="all"/>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.7.2.min.js"></script> 
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/move-top.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/easing.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
-    <link href="<?php echo base_url(); ?>assets/css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/global.css">
-    <link href='<?php echo base_url();?>assets/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <script src="<?php echo base_url(); ?>assets/js/slides.min.jquery.js"></script>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+<html>
+    <head>
+        <title>City Pet Service</title>
+        <meta charset="iso-8859-1">
+        <link href="<?php echo base_url();?>assets/css/petMart.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url();?>assets/css/ie7.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url();?>assets/css/ie6.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="<?php echo base_url();?>assets/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+        <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script> 
+        <script type="text/javascript" src="<?php echo base_url();?>assets/js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>assets/js/startstop-slider.js"></script>
+        <script>
+            function play(){
+            var audio = document.getElementById("audio");
+            audio.play();
+            }
+        </script>
     <script>
         $(function () {
             $('#products').slides({
@@ -28,6 +36,17 @@
     </script>
 </head>
 <body>
+     <div id="header"> <a href="<?php echo site_url('Home/dashboard')?>" id="logo"><img src="<?php echo base_url();?>assets/images/logo.gif" width="310" height="114" alt=""></a>
+        <ul class="navigation">
+            <li class="active"><a href="<?php echo site_url('Home/dashboard')?>" value="PLAY"  onclick="play()">Home</a></li>
+            <li><a href="<?php echo site_url('Cart/selectProduct')?>"  value="PLAY"  onclick="play()">PetMart</a></li>
+            <li><a href="<?php echo site_url('Home/petservice1')?>" value="PLAY"  onclick="play()">PetService</a></li>
+            <li><a href="<?php echo site_url('Home/petguide1')?>" value="PLAY"  onclick="play()">PetGuide</a></li>
+            <li><a href="<?php echo site_url('Home/about1')?>" value="PLAY"  onclick="play()">About us</a></li>
+            <li><a href="<?php echo site_url('Home/contact1')?>" value="PLAY"  onclick="play()">Contact us</a></li>
+
+        </ul>
+    </div>
     <div class="wrap">
         <div class="header">
             <div class="headertop_desc">
@@ -139,16 +158,12 @@
                                             </div>
                                             <a>
                                             </a>
-                                            <span class="button add-cart">
+                                           
                                           
-
-                                                    <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button">Update Cart
+                                                    <button type="submit" id="button" class="btn btn-success btn-lg btn-block login-button button add-cart ">Update Cart
                                                     </button>
 
-                                               
-                                            </span>   
-<!-- 
-                                            <div class="clear"></div> -->
+                                    
                                         </div>
 
                                     </div>
